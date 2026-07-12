@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مستر کافی | Mr. Coffee — Since 2017</title>
+<meta name="description" content="مستر کافی، تخصصی‌ترین مرکز سرو و دم‌آوری قوه در ساری، از سال ۱۳۹۶. منو، آدرس و اینستاگرام.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#14100d;
+    --black-2:#1c1712;
+    --wood:#6b4226;
+    --wood-light:#8a5a34;
+    --wood-dark:#3b2417;
+    --green:#1f3d35;
+    --green-2:#274a40;
+    --red:#8a3230;
+    --red-2:#a13d3a;
+    --cream:#f2e8d5;
+    --cream-dim:#cfc2a6;
+    --gold:#c9a227;
+    --neon:#4fd1e8;
+    --radius:14px;
+    --serif:'Instrument Serif', serif;
+    --marker:'Permanent Marker', cursive;
+    --sans:'Vazirmatn', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--black);
+    color:var(--cream);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- texture helpers ---------- */
+  .wood-bg{
+    background-color:var(--wood-dark);
+    background-image:
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 2px, transparent 2px, transparent 26px),
+      linear-gradient(180deg, var(--wood) 0%, var(--wood-dark) 100%);
+  }
+  .rug-pattern{
+    background-color:var(--red);
+    background-image:
+      repeating-linear-gradient(45deg, rgba(0,0,0,0.18) 0, rgba(0,0,0,0.18) 2px, transparent 2px, transparent 18px),
+      repeating-linear-gradient(-45deg, rgba(201,162,39,0.15) 0, rgba(201,162,39,0.15) 2px, transparent 2px, transparent 18px);
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(20,16,13,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,39,0.18);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{width:42px; height:42px; flex-shrink:0; border-radius:50%; object-fit:cover;}
+  .brand-text{display:flex; flex-direction:column; line-height:1.15;}
+  .brand-text .fa{font-weight:800; font-size:1.05rem; letter-spacing:0.5px;}
+  .brand-text .en{font-family:var(--serif); font-style:italic; font-size:0.72rem; color:var(--gold); letter-spacing:1px;}
+  nav.links{display:flex; gap:28px; font-size:0.92rem; font-weight:500;}
+  nav.links a{color:var(--cream-dim); position:relative; padding:4px 0; transition:color .2s;}
+  nav.links a:hover, nav.links a:focus-visible{color:var(--cream);}
+  nav.links a::after{
+    content:''; position:absolute; right:0; bottom:-2px; width:0; height:2px; background:var(--gold);
+    transition:width .25s;
+  }
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--green); color:var(--cream); padding:10px 18px; border-radius:999px;
+    font-size:0.85rem; font-weight:600; border:1px solid rgba(201,162,39,0.35);
+    transition:background .2s, transform .2s;
+  }
+  .nav-cta:hover{background:var(--green-2); transform:translateY(-1px);}
+  .menu-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:96px 24px 110px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(201,162,39,0.14), transparent 55%),
+      var(--black);
+  }
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 60px);
+    pointer-events:none;
+  }
+  .badge{
+    width:120px; height:120px; margin:0 auto 28px;
+    border-radius:50%; object-fit:cover;
+    box-shadow:0 0 0 3px rgba(201,162,39,0.35), 0 18px 40px rgba(0,0,0,0.45);
+    animation:float 6s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(-2deg);}
+    50%{transform:translateY(-8px) rotate(2deg);}
+  }
+  .eyebrow{
+    font-family:var(--marker); font-style:normal; color:var(--gold);
+    font-size:1.35rem; letter-spacing:0.5px; margin-bottom:22px; opacity:0.92;
+    transform:rotate(-1.5deg); text-shadow:0 0 18px rgba(201,162,39,0.35);
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    font-weight:900;
+    color:var(--cream);
+    letter-spacing:-0.5px;
+    margin-bottom:20px;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p.lead{
+    max-width:560px; margin:0 auto 38px;
+    color:var(--cream-dim); font-size:1.08rem;
+  }
+  .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 30px; border-radius:999px; font-weight:700; font-size:0.95rem;
+    transition:transform .2s, box-shadow .2s, background .2s;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gold); color:var(--black-2);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(201,162,39,0.28);}
+  .btn-outline{border-color:rgba(242,232,213,0.35); color:var(--cream);}
+  .btn-outline:hover{background:rgba(242,232,213,0.08); transform:translateY(-2px);}
+
+  .hero-quote{
+    margin-top:64px; padding-top:28px;
+    border-top:1px dashed rgba(242,232,213,0.2);
+    max-width:640px; margin-inline:auto;
+    font-family:var(--serif); font-style:italic; font-size:1.15rem;
+    color:var(--cream-dim);
+  }
+
+  /* ---------- about ---------- */
+  .about{
+    padding:90px 0;
+    background:var(--black-2);
+  }
+  .about-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .about-label{
+    font-size:0.8rem; letter-spacing:2px; color:var(--gold); font-weight:700; margin-bottom:14px;
+    text-transform:uppercase;
+  }
+  .about h2{font-size:2rem; font-weight:800; margin-bottom:18px; color:var(--cream);}
+  .about p{color:var(--cream-dim); font-size:1.02rem; margin-bottom:16px;}
+  .stat-row{display:flex; gap:32px; margin-top:28px; flex-wrap:wrap;}
+  .stat b{display:block; font-family:var(--serif); font-size:2rem; color:var(--gold);}
+  .stat span{font-size:0.85rem; color:var(--cream-dim);}
+  .about-visual{
+    aspect-ratio:4/5; border-radius:20px; position:relative; overflow:hidden;
+  }
+  .about-visual .rug-pattern{position:absolute; inset:0;}
+  .about-visual .plate{
+    position:absolute; inset:18px; border-radius:14px; background:var(--wood-dark);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  }
+  .about-visual svg{width:58%; height:58%;}
+
+  /* ---------- menu ---------- */
+  .menu-section{padding:90px 0 60px; background:var(--black);}
+  .section-head{text-align:center; max-width:600px; margin:0 auto 44px;}
+  .section-head .about-label{text-align:center;}
+  .section-head h2{font-size:2.1rem; font-weight:800; color:var(--cream);}
+  .section-head p{color:var(--cream-dim); margin-top:12px;}
+
+  .cat-nav{
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    margin-bottom:50px; position:sticky; top:78px; z-index:30;
+    padding:10px; background:rgba(20,16,13,0.85); backdrop-filter:blur(6px);
+    border-radius:999px; width:fit-content; margin-inline:auto;
+  }
+  .cat-nav a{
+    padding:9px 18px; border-radius:999px; font-size:0.85rem; font-weight:600;
+    color:var(--cream-dim); border:1px solid transparent; transition:all .2s;
+    white-space:nowrap;
+  }
+  .cat-nav a:hover{color:var(--cream);}
+  .cat-nav a.active{background:var(--gold); color:var(--black-2);}
+
+  .cat-block{margin-bottom:70px; scroll-margin-top:150px;}
+  .cat-title{
+    display:flex; align-items:center; gap:16px; margin-bottom:28px;
+  }
+  .cat-title .icon{
+    width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .cat-title .icon svg{width:24px; height:24px;}
+  .cat-title h3{font-size:1.5rem; font-weight:800; color:var(--cream);}
+  .cat-title .en-tag{
+    font-family:var(--serif); font-style:italic; color:var(--cream-dim); font-size:0.95rem; margin-inline-start:auto;
+  }
+
+  .item-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:14px 32px;
+  }
+  .item{
+    display:flex; align-items:baseline; gap:10px; padding:14px 4px;
+    border-bottom:1px dashed rgba(242,232,213,0.15);
+    transition:padding-right .2s, border-color .2s;
+  }
+  .item:hover{border-color:rgba(201,162,39,0.5); padding-right:8px;}
+  .item .name{font-weight:600; color:var(--cream); font-size:0.98rem;}
+  .item .note{font-size:0.78rem; color:var(--cream-dim); display:block; margin-top:2px;}
+  .item .dots{flex:1; border-bottom:1px dotted rgba(242,232,213,0.25); margin-bottom:5px; min-width:12px;}
+  .item .price{font-weight:700; color:var(--gold); font-size:0.92rem; white-space:nowrap;}
+
+  .item.variant{
+    grid-column:1 / -1;
+    flex-direction:column; align-items:flex-start; gap:10px;
+  }
+  .price-group{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:6px 13px; border-radius:8px;
+    background:rgba(201,162,39,0.08); border:1px solid rgba(201,162,39,0.32);
+    font-size:0.82rem; font-weight:700; color:var(--gold);
+    transition:background .2s, transform .2s;
+  }
+  .chip:hover{background:rgba(201,162,39,0.18); transform:translateY(-1px);}
+  .chip i{font-style:normal; font-weight:600; color:var(--cream-dim); font-size:0.72rem;}
+
+  .shot-row{display:flex; align-items:center; gap:8px; margin-top:2px;}
+  .shot-chip{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:5px 10px; border-radius:8px;
+    background:rgba(242,232,213,0.06); border:1px solid rgba(242,232,213,0.18);
+    color:var(--cream-dim); transition:background .2s, transform .2s;
+  }
+  .shot-chip:hover{transform:translateY(-1px);}
+  .shot-chip svg{width:19px; height:19px; stroke:var(--cream-dim); display:block;}
+  .shot-chip.double{color:var(--gold); border-color:rgba(201,162,39,0.32); background:rgba(201,162,39,0.08);}
+  .shot-chip.double svg{width:34px; height:19px; stroke:var(--gold);}
+  .shot-chip b{font-size:0.72rem; font-weight:700;}
+
+  /* category accent colors */
+  .cat-coffee .icon{background:var(--wood);}
+  .cat-hot .icon{background:var(--red);}
+  .cat-cold .icon{background:var(--neon); }
+  .cat-cold .icon svg{stroke:var(--black-2);}
+  .cat-cake .icon{background:var(--gold);}
+  .cat-cake .icon svg{stroke:var(--black-2);}
+  .cat-brew .icon{background:var(--green-2);}
+
+  /* ---------- location ---------- */
+  .location{
+    padding:90px 0; position:relative; overflow:hidden;
+  }
+  .location::before{
+    content:''; position:absolute; inset:0; background:var(--green);
+  }
+  .location::after{
+    content:''; position:absolute; inset:0;
+    background-image:radial-gradient(circle at 85% 20%, rgba(201,162,39,0.18), transparent 45%);
+  }
+  .location .wrap{position:relative; z-index:2;}
+  .loc-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+  }
+  .loc-card{
+    background:rgba(20,16,13,0.4); border:1px solid rgba(242,232,213,0.15);
+    border-radius:20px; padding:40px;
+  }
+  .loc-card h2{font-size:1.9rem; font-weight:800; margin-bottom:14px;}
+  .loc-card p{color:var(--cream-dim); margin-bottom:26px;}
+  .loc-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .loc-visual{
+    aspect-ratio:1/1; border-radius:20px; background:var(--black-2);
+    position:relative; overflow:hidden;
+    border:1px solid rgba(201,162,39,0.35);
+    box-shadow:0 20px 45px rgba(0,0,0,0.35);
+  }
+  .loc-visual iframe{
+    width:100%; height:100%; border:0; display:block;
+    filter:grayscale(0.15) contrast(1.05);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--black-2); padding:44px 0 28px; border-top:1px solid rgba(201,162,39,0.15);
+  }
+  .foot-row{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  .foot-brand{display:flex; align-items:center; gap:10px; color:var(--cream-dim); font-size:0.88rem;}
+  .foot-brand img{width:26px; height:26px; border-radius:50%; object-fit:cover;}
+  .foot-links{display:flex; gap:22px; font-size:0.85rem; color:var(--cream-dim);}
+  .foot-links a:hover{color:var(--gold);}
+  .foot-copy{
+    text-align:center; margin-top:28px; font-size:0.78rem; color:rgba(207,194,166,0.5);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    .about-grid, .loc-grid{grid-template-columns:1fr;}
+    .about-visual{order:-1; max-width:340px; margin:0 auto;}
+    nav.links{display:none;}
+  }
+  @media (max-width:600px){
+    .item-grid{grid-template-columns:1fr;}
+    .hero{padding:72px 20px 80px;}
+    .cat-nav{position:static; margin-bottom:36px; flex-wrap:wrap; width:auto;}
+    .loc-card{padding:26px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <img class="brand-mark" src="logo.png" alt="لوگوی مستر کافی">
+      <div class="brand-text">
+        <span class="fa">مستر کافی</span>
+        <span class="en">Mr. Coffee — Since 2017</span>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#about">درباره ما</a>
+      <a href="#menu">منو</a>
+      <a href="#location">آدرس</a>
+    </nav>
+    <a class="nav-cta" href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">مسیر تا کافه</a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <img class="badge" src="logo.png" alt="لوگوی مستر کافی">
+    <div class="eyebrow">Never trust anyone who doesn't drink coffee</div>
+    <h1>قهوه‌ای که <span>باهاش رفیق می‌شی</span></h1>
+    <p class="lead">مستر کافی از سال ۱۳۹۶ در ساری، خانه‌ی دومِ عاشقانِ قهوه‌ست؛ جایی برای یک اسپرسوی درست‌وحسابی، یک گپ طولانی و کمی وقت برای خودت.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#menu">دیدن منو</a>
+      <a class="btn btn-outline" href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">مسیر روی نقشه</a>
+    </div>
+    <p class="hero-quote">«یک روز بدون قهوه، یک روز از دست‌رفته‌ست.»</p>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="about-label">درباره‌ی ما</div>
+      <h2>تخصصی‌ترین مرکز سرو و دم‌آوری قهوه در مازندران</h2>
+      <p>مستر کافی از سال ۲۰۱۷ در ساری فعالیت می‌کنه؛ کافه‌ای کوچیک و صمیمی با دان‌های عربیکای ۱۰۰٪، دستگاه‌های حرفه‌ای اسپرسو و روش‌های دستیِ دم‌آوری مثل V60 و Chemex.</p>
+      <p>از صبحونه‌ی همراه با آمریکانو تا یک آفوگاتوی عصرگاهی، هر فنجون اینجا با دقت و بدون عجله آماده می‌شه — دقیقاً همون‌طور که یک قهوه‌ی خوب باید باشه.</p>
+      <div class="stat-row">
+        <div class="stat"><b>2017</b><span>سال تأسیس</span></div>
+        <div class="stat"><b>30+</b><span>آیتم منو</span></div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="rug-pattern"></div>
+      <div class="plate">
+        <svg viewBox="0 0 100 100" fill="none">
+          <path d="M25 45c0-4 3-6 6-6h38c3 0 6 2 6 6v10c0 12-11 22-25 22s-25-10-25-22V45z" fill="#f2e8d5"/>
+          <path d="M75 47h6c4 0 6 4 6 8s-2 8-6 8h-6" stroke="#f2e8d5" stroke-width="3" fill="none"/>
+          <path d="M33 30c0-5 3-9 6-9s4 4 4 9M53 30c0-5 3-9 6-9s4 4 4 9" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="50" cy="86" rx="30" ry="4" fill="#c9a227" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="about-label">منو</div>
+      <h2>از اسپرسو تا کیک روز</h2>
+      <p>قیمت‌ها به تومان و نمونه هستند. نوشیدنی‌های پایه‌قهوه بسته به نوع دان (عربیکا / بلند ۷۰-۳۰ / روبوستا) قیمت متفاوتی دارن.</p>
+    </div>
+
+    <nav class="cat-nav" id="catNav">
+      <a href="#cat-coffee" class="active">قهوه و شیر</a>
+      <a href="#cat-hot">نوشیدنی گرم</a>
+      <a href="#cat-cold">نوشیدنی سرد</a>
+      <a href="#cat-cake">کیک و کوکی</a>
+      <a href="#cat-brew">دم‌آوری دستی</a>
+    </nav>
+
+    <!-- Coffee & Milk -->
+    <div class="cat-block cat-coffee" id="cat-coffee">
+      <div class="cat-title">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f2e8d5" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/><path d="M8 3c0 1-1 1-1 2s1 1 1 2M12 3c0 1-1 1-1 2s1 1 1 2"/></svg></div>
+        <h3>قهوه و شیر</h3>
+        <span class="en-tag">Coffee &amp; Milk</span>
+      </div>
+      <div class="item-grid">
+        <div class="item variant"><span class="name">آمریکانو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">کورتادو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">کاپوچینو<span class="note">لیوان ۲۲۰</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">ترک</span><div class="price-group"><span class="chip"><i>عربیکا</i>۸۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۷۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۶۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">یونانی<span class="note">ترک + شیر</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">فرانسه</span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">فرانسه شیر</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">لاته</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">آفوگاتو<span class="note">بستنی + اسپرسو</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۳۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۲۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۱۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">کارامل ماکیاتو<span class="note">لیوان ۲۲۰</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۲۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۱۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۰۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">موکا کارامل</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۲۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۱۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۰۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+      </div>
+    </div>
+
+    <!-- Hot Drink -->
+    <div class="cat-block cat-hot" id="cat-hot">
+      <div class="cat-title">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f2e8d5" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/><path d="M9 2s-2 1-2 3 2 3 2 3M13 2s-2 1-2 3 2 3 2 3"/></svg></div>
+        <h3>نوشیدنی گرم</h3>
+        <span class="en-tag">Hot Drink</span>
+      </div>
+      <div class="item-grid">
+        <div class="item"><span class="name">ماسالا</span><span class="dots"></span><span class="price">۹۵٬۰۰۰</span></div>
+        <div class="item"><span class="name">نسکافه گلد</span><span class="dots"></span><span class="price">۸۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">هات چاکلت</span><span class="dots"></span><span class="price">۱۱۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">وایت چاکلت</span><span class="dots"></span><span class="price">۱۱۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">دارک چاکلت</span><span class="dots"></span><span class="price">۱۱۵٬۰۰۰</span></div>
+        <div class="item"><span class="name">دمنوش</span><span class="dots"></span><span class="price">۷۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">چای دمی<span class="note">قند، نبات</span></span><span class="dots"></span><span class="price">۵۵٬۰۰۰</span></div>
+        <div class="item"><span class="name">شیر کاکائو</span><span class="dots"></span><span class="price">۹۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">شیر دارچین</span><span class="dots"></span><span class="price">۹۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">شیر عسل</span><span class="dots"></span><span class="price">۹۵٬۰۰۰</span></div>
+        <div class="item"><span class="name">شیر پسته</span><span class="dots"></span><span class="price">۱۱۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">ماچا</span><span class="dots"></span><span class="price">۱۲۰٬۰۰۰</span></div>
+      </div>
+    </div>
+
+    <!-- Cold Drink -->
+    <div class="cat-block cat-cold" id="cat-cold">
+      <div class="cat-title">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14100d" stroke-width="2"><path d="M7 3h10l-1 15a3 3 0 01-3 3h-2a3 3 0 01-3-3L7 3z"/><path d="M6 3h12M9 8h6M9 13h6"/></svg></div>
+        <h3>نوشیدنی سرد</h3>
+        <span class="en-tag">Cold Drink</span>
+      </div>
+      <div class="item-grid">
+        <div class="item variant"><span class="name">کلد برو<span class="note">۲۳۰cc</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۱۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۰۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۹۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">آیس لته</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۱۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۰۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۹۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">آیس موکا</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۲۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۱۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۰۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">آیس کارامل ماکیاتو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۳۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۲۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۱۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item variant"><span class="name">آیس آمریکانو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
+        <div class="item"><span class="name">آیس چاکلت</span><span class="dots"></span><span class="price">۱۱۵٬۰۰۰</span></div>
+        <div class="item"><span class="name">آیس ماچا</span><span class="dots"></span><span class="price">۱۲۵٬۰۰۰</span></div>
+      </div>
+    </div>
+
+    <!-- Cakes & Cookies -->
+    <div class="cat-block cat-cake" id="cat-cake">
+      <div class="cat-title">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14100d" stroke-width="2"><path d="M4 12h16v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6z"/><path d="M4 12l2-5h12l2 5M9 3v2M12 2v3M15 3v2"/></svg></div>
+        <h3>کیک و کوکی</h3>
+        <span class="en-tag">Cakes &amp; Cookies</span>
+      </div>
+      <div class="item-grid">
+        <div class="item"><span class="name">کیک روز</span><span class="dots"></span><span class="price">۸۵٬۰۰۰</span></div>
+        <div class="item"><span class="name">کوکی</span><span class="dots"></span><span class="price">۶۵٬۰۰۰</span></div>
+      </div>
+    </div>
+
+    <!-- Brewed Coffee -->
+    <div class="cat-block cat-brew" id="cat-brew">
+      <div class="cat-title">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f2e8d5" stroke-width="2"><path d="M12 3l7 5-7 13-7-13 7-5z"/><path d="M12 3v18"/></svg></div>
+        <h3>دم‌آوری دستی</h3>
+        <span class="en-tag">Brewed Coffee</span>
+      </div>
+      <div class="item-grid">
+        <div class="item"><span class="name">V60</span><span class="dots"></span><span class="price">۵۰۰٬۰۰۰</span></div>
+        <div class="item"><span class="name">Chemex</span><span class="dots"></span><span class="price">۱۵۵٬۰۰۰</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== LOCATION ===================== -->
+<section class="location" id="location">
+  <div class="wrap loc-grid">
+    <div class="loc-card">
+      <h2>بیا سر بزن</h2>
+      <p>پیدا کردن مستر کافی راحته — فقط روی دکمه‌ی زیر بزن تا مسیر توی گوگل‌مپ برات باز بشه.</p>
+      <div class="loc-actions">
+        <a class="btn btn-primary" href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">باز کردن در گوگل‌مپ</a>
+        <a class="btn btn-outline" href="https://instagram.com/mr.coffee2017sari" target="_blank" rel="noopener">اینستاگرام ما</a>
+      </div>
+    </div>
+    <div class="loc-visual">
+      <iframe
+       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d400.60471921370174!2d53.0728998!3d36.5580248!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f853fa44b4d031b%3A0xa2627f3e9c5a32f1!2sMr%20coffee!5e0!3m2!1sen!2sfr!4v1782935227214!5m2!1sen!2sfr"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        title="مستر کافی روی نقشه گوگل">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="foot-brand">
+        <img src="logo.png" alt="لوگوی مستر کافی">
+        <span>مستر کافی — Mr. Coffee, Since 2017</span>
+      </div>
+      <div class="foot-links">
+        <a href="#about">درباره ما</a>
+        <a href="#menu">منو</a>
+        <a href="https://instagram.com/mr.coffee2017sari" target="_blank" rel="noopener">اینستاگرام</a>
+        <a href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">آدرس</a>
+      </div>
+    </div>
+    <div class="foot-copy">© تمامی حقوق برای مستر کافی محفوظ است.</div>
+  </div>
+</footer>
+
+<script>
+  // active category chip on scroll
+  const links = document.querySelectorAll('.cat-nav a');
+  const blocks = document.querySelectorAll('.cat-block');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const match = document.querySelector('.cat-nav a[href="#'+entry.target.id+'"]');
+        if(match) match.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-40% 0px -50% 0px', threshold:0});
+  blocks.forEach(b=>obs.observe(b));
+</script>
+
+</body>
+</html>
