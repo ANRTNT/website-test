@@ -1,566 +1,719 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html dir="rtl" lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مستر کافی | Mr. Coffee — Since 2017</title>
-<meta name="description" content="مستر کافی، تخصصی‌ترین مرکز سرو و دم‌آوری قوه در ساری، از سال ۱۳۹۶. منو، آدرس و اینستاگرام.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Permanent+Marker&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>کافه فست فود یازده | ELEVEN</title>
+<meta name="description" content="کافه فست فود یازده - بهترین زاویه دید برای تماشای هر گل. پیتزا، برگر، پاستا، باکس‌های گروهی و نوشیدنی‌ها.">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/styles.css">
 <style>
-  :root{
-    --black:#14100d;
-    --black-2:#1c1712;
-    --wood:#6b4226;
-    --wood-light:#8a5a34;
-    --wood-dark:#3b2417;
-    --green:#1f3d35;
-    --green-2:#274a40;
-    --red:#8a3230;
-    --red-2:#a13d3a;
-    --cream:#f2e8d5;
-    --cream-dim:#cfc2a6;
-    --gold:#c9a227;
-    --neon:#4fd1e8;
-    --radius:14px;
-    --serif:'Instrument Serif', serif;
-    --marker:'Permanent Marker', cursive;
-    --sans:'Vazirmatn', sans-serif;
-  }
+    html{
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px));
+        background: #252623;
+    }
+    @media (prefers-reduced-motion: reduce){
+        html{ scroll-behavior: auto; }
+    }
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:var(--sans);
-    background:var(--black);
-    color:var(--cream);
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  img,svg{display:block; max-width:100%;}
-  a{color:inherit; text-decoration:none;}
-  ul{list-style:none;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
-
-  /* ---------- texture helpers ---------- */
-  .wood-bg{
-    background-color:var(--wood-dark);
-    background-image:
-      repeating-linear-gradient(90deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 2px, transparent 2px, transparent 26px),
-      linear-gradient(180deg, var(--wood) 0%, var(--wood-dark) 100%);
-  }
-  .rug-pattern{
-    background-color:var(--red);
-    background-image:
-      repeating-linear-gradient(45deg, rgba(0,0,0,0.18) 0, rgba(0,0,0,0.18) 2px, transparent 2px, transparent 18px),
-      repeating-linear-gradient(-45deg, rgba(201,162,39,0.15) 0, rgba(201,162,39,0.15) 2px, transparent 2px, transparent 18px);
-  }
-
-  /* ---------- header ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(20,16,13,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(201,162,39,0.18);
-  }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 24px;
-  }
-  .brand{display:flex; align-items:center; gap:12px;}
-  .brand-mark{width:42px; height:42px; flex-shrink:0; border-radius:50%; object-fit:cover;}
-  .brand-text{display:flex; flex-direction:column; line-height:1.15;}
-  .brand-text .fa{font-weight:800; font-size:1.05rem; letter-spacing:0.5px;}
-  .brand-text .en{font-family:var(--serif); font-style:italic; font-size:0.72rem; color:var(--gold); letter-spacing:1px;}
-  nav.links{display:flex; gap:28px; font-size:0.92rem; font-weight:500;}
-  nav.links a{color:var(--cream-dim); position:relative; padding:4px 0; transition:color .2s;}
-  nav.links a:hover, nav.links a:focus-visible{color:var(--cream);}
-  nav.links a::after{
-    content:''; position:absolute; right:0; bottom:-2px; width:0; height:2px; background:var(--gold);
-    transition:width .25s;
-  }
-  nav.links a:hover::after{width:100%;}
-  .nav-cta{
-    background:var(--green); color:var(--cream); padding:10px 18px; border-radius:999px;
-    font-size:0.85rem; font-weight:600; border:1px solid rgba(201,162,39,0.35);
-    transition:background .2s, transform .2s;
-  }
-  .nav-cta:hover{background:var(--green-2); transform:translateY(-1px);}
-  .menu-toggle{display:none;}
-
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    padding:96px 24px 110px;
-    text-align:center;
-    overflow:hidden;
-    background:
-      radial-gradient(ellipse at 50% -10%, rgba(201,162,39,0.14), transparent 55%),
-      var(--black);
-  }
-  .hero::before{
-    content:'';
-    position:absolute; inset:0;
-    background-image:
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 60px);
-    pointer-events:none;
-  }
-  .badge{
-    width:120px; height:120px; margin:0 auto 28px;
-    border-radius:50%; object-fit:cover;
-    box-shadow:0 0 0 3px rgba(201,162,39,0.35), 0 18px 40px rgba(0,0,0,0.45);
-    animation:float 6s ease-in-out infinite;
-  }
-  @keyframes float{
-    0%,100%{transform:translateY(0) rotate(-2deg);}
-    50%{transform:translateY(-8px) rotate(2deg);}
-  }
-  .eyebrow{
-    font-family:var(--marker); font-style:normal; color:var(--gold);
-    font-size:1.35rem; letter-spacing:0.5px; margin-bottom:22px; opacity:0.92;
-    transform:rotate(-1.5deg); text-shadow:0 0 18px rgba(201,162,39,0.35);
-  }
-  .hero h1{
-    font-size:clamp(2.4rem, 6vw, 4.2rem);
-    font-weight:900;
-    color:var(--cream);
-    letter-spacing:-0.5px;
-    margin-bottom:20px;
-  }
-  .hero h1 span{color:var(--gold);}
-  .hero p.lead{
-    max-width:560px; margin:0 auto 38px;
-    color:var(--cream-dim); font-size:1.08rem;
-  }
-  .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:14px 30px; border-radius:999px; font-weight:700; font-size:0.95rem;
-    transition:transform .2s, box-shadow .2s, background .2s;
-    border:1px solid transparent;
-  }
-  .btn-primary{background:var(--gold); color:var(--black-2);}
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(201,162,39,0.28);}
-  .btn-outline{border-color:rgba(242,232,213,0.35); color:var(--cream);}
-  .btn-outline:hover{background:rgba(242,232,213,0.08); transform:translateY(-2px);}
-
-  .hero-quote{
-    margin-top:64px; padding-top:28px;
-    border-top:1px dashed rgba(242,232,213,0.2);
-    max-width:640px; margin-inline:auto;
-    font-family:var(--serif); font-style:italic; font-size:1.15rem;
-    color:var(--cream-dim);
-  }
-
-  /* ---------- about ---------- */
-  .about{
-    padding:90px 0;
-    background:var(--black-2);
-  }
-  .about-grid{
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
-  }
-  .about-label{
-    font-size:0.8rem; letter-spacing:2px; color:var(--gold); font-weight:700; margin-bottom:14px;
-    text-transform:uppercase;
-  }
-  .about h2{font-size:2rem; font-weight:800; margin-bottom:18px; color:var(--cream);}
-  .about p{color:var(--cream-dim); font-size:1.02rem; margin-bottom:16px;}
-  .stat-row{display:flex; gap:32px; margin-top:28px; flex-wrap:wrap;}
-  .stat b{display:block; font-family:var(--serif); font-size:2rem; color:var(--gold);}
-  .stat span{font-size:0.85rem; color:var(--cream-dim);}
-  .about-visual{
-    aspect-ratio:4/5; border-radius:20px; position:relative; overflow:hidden;
-  }
-  .about-visual .rug-pattern{position:absolute; inset:0;}
-  .about-visual .plate{
-    position:absolute; inset:18px; border-radius:14px; background:var(--wood-dark);
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 20px 40px rgba(0,0,0,0.4);
-  }
-  .about-visual svg{width:58%; height:58%;}
-
-  /* ---------- menu ---------- */
-  .menu-section{padding:90px 0 60px; background:var(--black);}
-  .section-head{text-align:center; max-width:600px; margin:0 auto 44px;}
-  .section-head .about-label{text-align:center;}
-  .section-head h2{font-size:2.1rem; font-weight:800; color:var(--cream);}
-  .section-head p{color:var(--cream-dim); margin-top:12px;}
-
-  .cat-nav{
-    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
-    margin-bottom:50px; position:sticky; top:78px; z-index:30;
-    padding:10px; background:rgba(20,16,13,0.85); backdrop-filter:blur(6px);
-    border-radius:999px; width:fit-content; margin-inline:auto;
-  }
-  .cat-nav a{
-    padding:9px 18px; border-radius:999px; font-size:0.85rem; font-weight:600;
-    color:var(--cream-dim); border:1px solid transparent; transition:all .2s;
-    white-space:nowrap;
-  }
-  .cat-nav a:hover{color:var(--cream);}
-  .cat-nav a.active{background:var(--gold); color:var(--black-2);}
-
-  .cat-block{margin-bottom:70px; scroll-margin-top:150px;}
-  .cat-title{
-    display:flex; align-items:center; gap:16px; margin-bottom:28px;
-  }
-  .cat-title .icon{
-    width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
-  }
-  .cat-title .icon svg{width:24px; height:24px;}
-  .cat-title h3{font-size:1.5rem; font-weight:800; color:var(--cream);}
-  .cat-title .en-tag{
-    font-family:var(--serif); font-style:italic; color:var(--cream-dim); font-size:0.95rem; margin-inline-start:auto;
-  }
-
-  .item-grid{
-    display:grid; grid-template-columns:repeat(2, 1fr); gap:14px 32px;
-  }
-  .item{
-    display:flex; align-items:baseline; gap:10px; padding:14px 4px;
-    border-bottom:1px dashed rgba(242,232,213,0.15);
-    transition:padding-right .2s, border-color .2s;
-  }
-  .item:hover{border-color:rgba(201,162,39,0.5); padding-right:8px;}
-  .item .name{font-weight:600; color:var(--cream); font-size:0.98rem;}
-  .item .note{font-size:0.78rem; color:var(--cream-dim); display:block; margin-top:2px;}
-  .item .dots{flex:1; border-bottom:1px dotted rgba(242,232,213,0.25); margin-bottom:5px; min-width:12px;}
-  .item .price{font-weight:700; color:var(--gold); font-size:0.92rem; white-space:nowrap;}
-
-  .item.variant{
-    grid-column:1 / -1;
-    flex-direction:column; align-items:flex-start; gap:10px;
-  }
-  .price-group{display:flex; gap:8px; flex-wrap:wrap;}
-  .chip{
-    display:inline-flex; align-items:center; gap:6px;
-    padding:6px 13px; border-radius:8px;
-    background:rgba(201,162,39,0.08); border:1px solid rgba(201,162,39,0.32);
-    font-size:0.82rem; font-weight:700; color:var(--gold);
-    transition:background .2s, transform .2s;
-  }
-  .chip:hover{background:rgba(201,162,39,0.18); transform:translateY(-1px);}
-  .chip i{font-style:normal; font-weight:600; color:var(--cream-dim); font-size:0.72rem;}
-
-  .shot-row{display:flex; align-items:center; gap:8px; margin-top:2px;}
-  .shot-chip{
-    display:inline-flex; align-items:center; gap:6px;
-    padding:5px 10px; border-radius:8px;
-    background:rgba(242,232,213,0.06); border:1px solid rgba(242,232,213,0.18);
-    color:var(--cream-dim); transition:background .2s, transform .2s;
-  }
-  .shot-chip:hover{transform:translateY(-1px);}
-  .shot-chip svg{width:19px; height:19px; stroke:var(--cream-dim); display:block;}
-  .shot-chip.double{color:var(--gold); border-color:rgba(201,162,39,0.32); background:rgba(201,162,39,0.08);}
-  .shot-chip.double svg{width:34px; height:19px; stroke:var(--gold);}
-  .shot-chip b{font-size:0.72rem; font-weight:700;}
-
-  /* category accent colors */
-  .cat-coffee .icon{background:var(--wood);}
-  .cat-hot .icon{background:var(--red);}
-  .cat-cold .icon{background:var(--neon); }
-  .cat-cold .icon svg{stroke:var(--black-2);}
-  .cat-cake .icon{background:var(--gold);}
-  .cat-cake .icon svg{stroke:var(--black-2);}
-  .cat-brew .icon{background:var(--green-2);}
-
-  /* ---------- location ---------- */
-  .location{
-    padding:90px 0; position:relative; overflow:hidden;
-  }
-  .location::before{
-    content:''; position:absolute; inset:0; background:var(--green);
-  }
-  .location::after{
-    content:''; position:absolute; inset:0;
-    background-image:radial-gradient(circle at 85% 20%, rgba(201,162,39,0.18), transparent 45%);
-  }
-  .location .wrap{position:relative; z-index:2;}
-  .loc-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
-  }
-  .loc-card{
-    background:rgba(20,16,13,0.4); border:1px solid rgba(242,232,213,0.15);
-    border-radius:20px; padding:40px;
-  }
-  .loc-card h2{font-size:1.9rem; font-weight:800; margin-bottom:14px;}
-  .loc-card p{color:var(--cream-dim); margin-bottom:26px;}
-  .loc-actions{display:flex; gap:14px; flex-wrap:wrap;}
-  .loc-visual{
-    aspect-ratio:1/1; border-radius:20px; background:var(--black-2);
-    position:relative; overflow:hidden;
-    border:1px solid rgba(201,162,39,0.35);
-    box-shadow:0 20px 45px rgba(0,0,0,0.35);
-  }
-  .loc-visual iframe{
-    width:100%; height:100%; border:0; display:block;
-    filter:grayscale(0.15) contrast(1.05);
-  }
-
-  /* ---------- footer ---------- */
-  footer{
-    background:var(--black-2); padding:44px 0 28px; border-top:1px solid rgba(201,162,39,0.15);
-  }
-  .foot-row{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
-  }
-  .foot-brand{display:flex; align-items:center; gap:10px; color:var(--cream-dim); font-size:0.88rem;}
-  .foot-brand img{width:26px; height:26px; border-radius:50%; object-fit:cover;}
-  .foot-links{display:flex; gap:22px; font-size:0.85rem; color:var(--cream-dim);}
-  .foot-links a:hover{color:var(--gold);}
-  .foot-copy{
-    text-align:center; margin-top:28px; font-size:0.78rem; color:rgba(207,194,166,0.5);
-  }
-
-  /* ---------- responsive ---------- */
-  @media (max-width:860px){
-    .about-grid, .loc-grid{grid-template-columns:1fr;}
-    .about-visual{order:-1; max-width:340px; margin:0 auto;}
-    nav.links{display:none;}
-  }
-  @media (max-width:600px){
-    .item-grid{grid-template-columns:1fr;}
-    .hero{padding:72px 20px 80px;}
-    .cat-nav{position:static; margin-bottom:36px; flex-wrap:wrap; width:auto;}
-    .loc-card{padding:26px;}
-  }
+::-webkit-scrollbar-track {
+    background: #252623; /* Replace with your website's gray */
+}
+    .hero-text-shadow{ text-shadow: 0 2px 6px rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.35); }
+    .hero-headline{
+        font-family: 'Estedad', 'Vazirmatn Black', sans-serif;
+        font-weight: 800;
+        color: #F3EBDD;
+        text-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
+        line-height: 0.98;
+        letter-spacing: -0.01em;
+    }
+    .stadium-shadow{ box-shadow: 4px 4px 0 0 #012d1d; }
+    .jersey-number{ font-family:'Anton','Lalezar','IBM Plex Sans Arabic',sans-serif; }
+    .menu-tab.active-tab{ color:#fff; }
+    ::-webkit-scrollbar{ height:6px; width:6px; }
+    ::-webkit-scrollbar-thumb{ background:#C9A24B; border-radius:9999px; }
+    body{ font-family:'Work Sans','IBM Plex Sans Arabic',sans-serif; }
+    /* Keep the fixed navigation flush with the iOS visual viewport.  The safe-area
+       fill also prevents Safari's top-edge compositing seam from exposing the page. */
+    .site-header{
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding-top: env(safe-area-inset-top, 0px);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    /* Anton/Lalezar have no Persian glyphs (Lalezar covers Arabic script only, not Latin),
+       so headings fall back to IBM Plex Sans Arabic for Persian text — but only the
+       family falls back by default, not the weight. Force the intended weight per
+       scale so Persian text keeps the same visual impact as the Latin display font. */
+    .font-display{ font-weight:800 !important; }
+    .logo-wordmark {
+       font-weight: 300 !important;
+     }
+    .font-headline-lg{ font-weight:800 !important; letter-spacing:-0.01em; }
+    .font-headline-md{ font-weight:700 !important; }
+    .font-label-caps{ font-weight:600 !important; letter-spacing:0.03em; }
+    .font-label-sm{ font-weight:500 !important; }
+    .font-body-lg{ font-weight:400 !important; line-height:1.9; }
+    .font-body-md{ font-weight:400 !important; line-height:1.85; }
+    @media (max-width: 767px){
+        .stadium-shadow{ box-shadow: 3px 3px 0 0 #012d1d; }
+    }
+    /* Inline SVG icons (replaces the Google Material Symbols web font — no external
+       font request needed; icons inherit size from font-size and color from currentColor) */
+    .icon{ display:inline-block; width:1em; height:1em; vertical-align:-0.15em; flex-shrink:0; }
 </style>
 </head>
-<body>
+<body class="bg-background text-on-background">
 
-<!-- ===================== HEADER ===================== -->
-<header>
-  <div class="nav wrap">
-    <div class="brand">
-      <img class="brand-mark" src="logo.png" alt="لوگوی مستر کافی">
-      <div class="brand-text">
-        <span class="fa">مستر کافی</span>
-        <span class="en">Mr. Coffee — Since 2017</span>
-      </div>
-    </div>
-    <nav class="links">
-      <a href="#about">درباره ما</a>
-      <a href="#menu">منو</a>
-      <a href="#location">آدرس</a>
-    </nav>
-    <a class="nav-cta" href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">مسیر تا کافه</a>
-  </div>
+<!-- Top Navigation Bar -->
+<header class="site-header fixed top-0 w-full z-50 bg-tertiary/95 backdrop-blur-md border-b border-[#C9A24B]/20 transition-all duration-300">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-sm md:py-stack-md max-w-[1280px] mx-auto">
+<a href="#hero" class="flex items-center gap-stack-sm md:gap-stack-md">
+<span class="flex items-center justify-center bg-white rounded-[50%] p-2 shadow-md flex-shrink-0">
+    <img src="assets/logo.png" alt="لوگوی کافه یازده" class="h-12 md:h-14 w-auto">
+</span>
+<span class="hidden md:block h-7 w-[1px] bg-white/20"></span>
+<span class="hidden md:block font-display logo-wordmark text-2xl md:text-3xl text-white tracking-tight">ELEVEN</span>
+</a>
+<ul class="hidden md:flex gap-gutter items-center">
+<li><a class="font-label-caps text-[16px] tracking-wide text-white/90 hover:text-[#C9A24B] transition-colors" href="#hero">خانه</a></li>
+<li><a class="font-label-caps text-[16px] tracking-wide text-white/90 hover:text-[#C9A24B] transition-colors" href="https://football360.ir/league/matches" target="_blank" rel="noopener">بازی‌های پیش‌رو</a></li>
+<li><a class="font-label-caps text-[16px] tracking-wide text-white/90 hover:text-[#C9A24B] transition-colors" href="#menu">منو</a></li>
+<li><a class="font-label-caps text-[16px] tracking-wide text-white/90 hover:text-[#C9A24B] transition-colors" href="#offers">پیشنهاد ویژه</a></li>
+<li><a class="font-label-caps text-[16px] tracking-wide text-white/90 hover:text-[#C9A24B] transition-colors" href="#about">درباره ما</a></li>
+<li><a class="font-label-caps text-[16px] tracking-wide text-white/90 hover:text-[#C9A24B] transition-colors" href="#contact">تماس</a></li>
+</ul>
+<a href="tel:09199790077" class="bg-[#C9A24B] text-[#12261C] font-label-caps text-label-caps px-4 md:px-6 py-2 stadium-shadow hover:translate-y-[-2px] active:scale-95 transition-all inline-flex items-center gap-1">
+<svg class="icon text-base" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02l-2.2 2.19z"/></svg>
+رزرو میز
+</a>
+</nav>
 </header>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero">
-  <div class="wrap">
-    <img class="badge" src="logo.png" alt="لوگوی مستر کافی">
-    <div class="eyebrow">Never trust anyone who doesn't drink coffee</div>
-    <h1>قهوه‌ای که <span>باهاش رفیق می‌شی</span></h1>
-    <p class="lead">مستر کافی از سال ۱۳۹۶ در ساری، خانه‌ی دومِ عاشقانِ قهوه‌ست؛ جایی برای یک اسپرسوی درست‌وحسابی، یک گپ طولانی و کمی وقت برای خودت.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#menu">دیدن منو</a>
-      <a class="btn btn-outline" href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">مسیر روی نقشه</a>
-    </div>
-    <p class="hero-quote">«یک روز بدون قهوه، یک روز از دست‌رفته‌ست.»</p>
-  </div>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="hero">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105" style="background-image: url('assets/hero-bg.svg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl">
+<span class="inline-block bg-[#C9A24B] text-[#12261C] font-label-caps text-label-caps px-4 py-1 mb-stack-md tracking-widest">کافه یازده | ELEVEN</span>
+<h1 class="hero-headline text-5xl md:text-8xl mb-stack-lg">
+بهترین زاویه دید برای <br> تماشای هر گل
+</h1>
+<p class="hero-text-shadow text-white font-body-lg text-body-lg max-w-2xl mx-auto mb-stack-lg">
+ساری، خیابان مهدیه (بیست متری دوم)، نبش مهدیه چهاردهم (گلسار)
+</p>
+<div class="flex flex-col md:flex-row justify-center gap-stack-md mt-6">
+<a class="bg-[#C9A24B] text-[#12261C] font-headline-md text-headline-md px-10 py-4 stadium-shadow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2" href="https://football360.ir/league/matches" target="_blank" rel="noopener">
+<svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8.2 14.9 10.3 13.8 13.7 10.2 13.7 9.1 10.3Z" fill="currentColor"/><path d="M12 8.2V5.3M14.9 10.3l2.7-1.6M13.8 13.7l1.6 2.6M10.2 13.7l-1.6 2.6M9.1 10.3l-2.7-1.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+بازی‌های پیش‌رو
+</a>
+<a class="border-2 border-white text-white font-headline-md text-headline-md px-10 py-4 hover:bg-white hover:text-primary transition-all" href="#menu">
+مشاهده منو
+</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-0 w-full h-[1px] bg-[#C9A24B]/30"></div>
 </section>
 
-<!-- ===================== ABOUT ===================== -->
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div>
-      <div class="about-label">درباره‌ی ما</div>
-      <h2>تخصصی‌ترین مرکز سرو و دم‌آوری قهوه در مازندران</h2>
-      <p>مستر کافی از سال ۲۰۱۷ در ساری فعالیت می‌کنه؛ کافه‌ای کوچیک و صمیمی با دان‌های عربیکای ۱۰۰٪، دستگاه‌های حرفه‌ای اسپرسو و روش‌های دستیِ دم‌آوری مثل V60 و Chemex.</p>
-      <p>از صبحونه‌ی همراه با آمریکانو تا یک آفوگاتوی عصرگاهی، هر فنجون اینجا با دقت و بدون عجله آماده می‌شه — دقیقاً همون‌طور که یک قهوه‌ی خوب باید باشه.</p>
-      <div class="stat-row">
-        <div class="stat"><b>2017</b><span>سال تأسیس</span></div>
-        <div class="stat"><b>30+</b><span>آیتم منو</span></div>
+<!-- Special Offers (empty by default — cafe adds items here when a promotion is active) -->
+<section class="py-20 bg-primary text-white overflow-hidden relative" id="offers">
+<div class="absolute inset-0 opacity-5 pointer-events-none select-none jersey-number text-[15rem] -left-10 top-0">%</div>
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+<div class="max-w-xl">
+<span class="text-[#C9A24B] font-label-caps text-label-caps tracking-widest">LIMITED TIME ONLY</span>
+<h2 class="font-headline-lg text-headline-lg mt-4">پیشنهادهای ویژه</h2>
+</div>
+</div>
+
+<!--
+  این بخش عمداً خالی است. هر وقت پیشنهاد ویژه یا تخفیف فعالی وجود داشت،
+  یک کارت مثل نمونه زیر را از حالت کامنت خارج کرده و اطلاعاتش را جایگزین کنید:
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+    <div class="relative bg-[#C9A24B]/5 border border-[#C9A24B]/30 p-6 rounded-xl backdrop-blur-sm group hover:bg-[#C9A24B]/10 transition-all flex flex-col h-full">
+      <div class="absolute -top-3 -right-3 bg-error text-on-error font-label-caps text-xs px-3 py-1 rounded-full z-10 animate-pulse">HOT</div>
+      <div class="flex justify-between items-start mb-4 gap-2">
+        <h3 class="font-headline-md text-white text-lg md:text-xl">عنوان پیشنهاد</h3>
+        <span class="text-[#C9A24B] font-display text-lg md:text-xl whitespace-nowrap">000,000 تومان</span>
       </div>
-    </div>
-    <div class="about-visual">
-      <div class="rug-pattern"></div>
-      <div class="plate">
-        <svg viewBox="0 0 100 100" fill="none">
-          <path d="M25 45c0-4 3-6 6-6h38c3 0 6 2 6 6v10c0 12-11 22-25 22s-25-10-25-22V45z" fill="#f2e8d5"/>
-          <path d="M75 47h6c4 0 6 4 6 8s-2 8-6 8h-6" stroke="#f2e8d5" stroke-width="3" fill="none"/>
-          <path d="M33 30c0-5 3-9 6-9s4 4 4 9M53 30c0-5 3-9 6-9s4 4 4 9" stroke="#c9a227" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <ellipse cx="50" cy="86" rx="30" ry="4" fill="#c9a227" opacity="0.4"/>
-        </svg>
-      </div>
+      <p class="text-on-tertiary-container text-sm font-body-md leading-relaxed mb-6">توضیح پیشنهاد ویژه</p>
+      <a href="tel:09199790077" class="mt-auto w-full py-2 border border-[#C9A24B] text-[#C9A24B] font-label-caps text-label-caps hover:bg-[#C9A24B] hover:text-[#12261C] transition-colors text-center inline-flex items-center justify-center gap-2">
+        <svg class="icon text-base" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02l-2.2 2.19z"/></svg>
+        سفارش این پیشنهاد
+      </a>
     </div>
   </div>
+-->
+<div class="flex flex-col items-center justify-center text-center py-16 border border-dashed border-white/20 rounded-xl">
+<svg class="icon text-5xl text-[#C9A24B]/60 mb-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.41 11.58 12.41 2.58C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.05-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+<p class="font-headline-md text-body-lg text-white/70 max-w-md">در حال حاضر پیشنهاد ویژه‌ای فعال نیست.</p>
+<p class="font-body-md text-white/40 mt-2 max-w-md">به محض فعال شدن تخفیف یا کمبوی مناسبتی، همین‌جا اعلام می‌شود. صفحه اینستاگرام یازده را هم دنبال کنید تا از پیشنهادهای ویژه باخبر شوید.</p>
+</div>
+
+</div>
 </section>
 
-<!-- ===================== MENU ===================== -->
-<section class="menu-section" id="menu">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="about-label">منو</div>
-      <h2>از اسپرسو تا کیک روز</h2>
-      <p>قیمت‌ها به تومان و نمونه هستند. نوشیدنی‌های پایه‌قهوه بسته به نوع دان (عربیکا / بلند ۷۰-۳۰ / روبوستا) قیمت متفاوتی دارن.</p>
-    </div>
+<!-- Interactive Menu Section -->
+<section class="py-20 bg-tertiary text-on-tertiary overflow-hidden pt-20" id="menu">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<span class="text-[#C9A24B] font-label-caps text-label-caps">FUEL FOR THE FANS</span>
+<h2 class="font-headline-lg text-headline-lg text-white mt-4">منوی کافه یازده</h2>
+</div>
 
-    <nav class="cat-nav" id="catNav">
-      <a href="#cat-coffee" class="active">قهوه و شیر</a>
-      <a href="#cat-hot">نوشیدنی گرم</a>
-      <a href="#cat-cold">نوشیدنی سرد</a>
-      <a href="#cat-cake">کیک و کوکی</a>
-      <a href="#cat-brew">دم‌آوری دستی</a>
-    </nav>
+<!-- Category Filtering -->
+<div class="flex flex-wrap justify-center gap-x-gutter gap-y-2 mb-16 border-b border-white/10 pb-4 overflow-x-auto" id="menu-tabs">
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all active-tab border-b-2 border-[#C9A24B]" onclick="filterMenu('pizza', this)">پیتزا</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('burgers', this)">برگر و ساندویچ</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('pasta', this)">پاستا و سالاد</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('doner', this)">خوراک دنر</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('boxes', this)">باکس‌های گروهی</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('fried', this)">سوخاری و پیراشکی</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('fries', this)">سیب باکس و پیش‌غذا</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('shakes', this)">شیک و اسموتی</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('coldDrinks', this)">قهوه و نوشیدنی سرد</button>
+<button class="menu-tab font-headline-md text-base md:text-headline-md pb-4 px-2 md:px-4 transition-all hover:text-white text-white/60" onclick="filterMenu('hotDrinks', this)">چای، قهوه گرم و دسر</button>
+</div>
 
-    <!-- Coffee & Milk -->
-    <div class="cat-block cat-coffee" id="cat-coffee">
-      <div class="cat-title">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f2e8d5" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/><path d="M8 3c0 1-1 1-1 2s1 1 1 2M12 3c0 1-1 1-1 2s1 1 1 2"/></svg></div>
-        <h3>قهوه و شیر</h3>
-        <span class="en-tag">Coffee &amp; Milk</span>
-      </div>
-      <div class="item-grid">
-        <div class="item variant"><span class="name">آمریکانو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">کورتادو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">کاپوچینو<span class="note">لیوان ۲۲۰</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">ترک</span><div class="price-group"><span class="chip"><i>عربیکا</i>۸۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۷۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۶۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">یونانی<span class="note">ترک + شیر</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">فرانسه</span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">فرانسه شیر</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">لاته</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۰۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۹۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۸۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">آفوگاتو<span class="note">بستنی + اسپرسو</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۳۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۲۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۱۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">کارامل ماکیاتو<span class="note">لیوان ۲۲۰</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۲۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۱۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۰۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">موکا کارامل</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۲۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۱۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۰۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-      </div>
-    </div>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300 ease-out" id="menu-container"></div>
 
-    <!-- Hot Drink -->
-    <div class="cat-block cat-hot" id="cat-hot">
-      <div class="cat-title">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f2e8d5" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/><path d="M9 2s-2 1-2 3 2 3 2 3M13 2s-2 1-2 3 2 3 2 3"/></svg></div>
-        <h3>نوشیدنی گرم</h3>
-        <span class="en-tag">Hot Drink</span>
-      </div>
-      <div class="item-grid">
-        <div class="item"><span class="name">ماسالا</span><span class="dots"></span><span class="price">۹۵٬۰۰۰</span></div>
-        <div class="item"><span class="name">نسکافه گلد</span><span class="dots"></span><span class="price">۸۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">هات چاکلت</span><span class="dots"></span><span class="price">۱۱۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">وایت چاکلت</span><span class="dots"></span><span class="price">۱۱۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">دارک چاکلت</span><span class="dots"></span><span class="price">۱۱۵٬۰۰۰</span></div>
-        <div class="item"><span class="name">دمنوش</span><span class="dots"></span><span class="price">۷۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">چای دمی<span class="note">قند، نبات</span></span><span class="dots"></span><span class="price">۵۵٬۰۰۰</span></div>
-        <div class="item"><span class="name">شیر کاکائو</span><span class="dots"></span><span class="price">۹۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">شیر دارچین</span><span class="dots"></span><span class="price">۹۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">شیر عسل</span><span class="dots"></span><span class="price">۹۵٬۰۰۰</span></div>
-        <div class="item"><span class="name">شیر پسته</span><span class="dots"></span><span class="price">۱۱۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">ماچا</span><span class="dots"></span><span class="price">۱۲۰٬۰۰۰</span></div>
-      </div>
-    </div>
-
-    <!-- Cold Drink -->
-    <div class="cat-block cat-cold" id="cat-cold">
-      <div class="cat-title">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14100d" stroke-width="2"><path d="M7 3h10l-1 15a3 3 0 01-3 3h-2a3 3 0 01-3-3L7 3z"/><path d="M6 3h12M9 8h6M9 13h6"/></svg></div>
-        <h3>نوشیدنی سرد</h3>
-        <span class="en-tag">Cold Drink</span>
-      </div>
-      <div class="item-grid">
-        <div class="item variant"><span class="name">کلد برو<span class="note">۲۳۰cc</span></span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۱۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۰۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۹۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">آیس لته</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۱۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۰۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۹۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">آیس موکا</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۲۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۱۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۰۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">آیس کارامل ماکیاتو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۱۳۰٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۱۲۰٬۰۰۰</span><span class="chip"><i>روبوستا</i>۱۱۰٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item variant"><span class="name">آیس آمریکانو</span><div class="price-group"><span class="chip"><i>عربیکا</i>۹۵٬۰۰۰</span><span class="chip"><i>۷۰/۳۰</i>۸۵٬۰۰۰</span><span class="chip"><i>روبوستا</i>۷۵٬۰۰۰</span></div><div class="shot-row"><span class="shot-chip" title="سینگل"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 10h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5v-4z"/><path d="M17 11h2a2 2 0 010 4h-2"/></svg></span><span class="shot-chip double" title="دبل"><svg viewBox="0 0 40 24" fill="none" stroke-width="2"><path d="M2 8h13v4a5 5 0 01-5 5H7a5 5 0 01-5-5V8z"/><path d="M15 9h2a2 2 0 010 4h-2"/><path d="M23 8h13v4a5 5 0 01-5 5h-3a5 5 0 01-5-5V8z"/><path d="M36 9h2a2 2 0 010 4h-2"/></svg><b>+۱۵٬۰۰۰</b></span></div></div>
-        <div class="item"><span class="name">آیس چاکلت</span><span class="dots"></span><span class="price">۱۱۵٬۰۰۰</span></div>
-        <div class="item"><span class="name">آیس ماچا</span><span class="dots"></span><span class="price">۱۲۵٬۰۰۰</span></div>
-      </div>
-    </div>
-
-    <!-- Cakes & Cookies -->
-    <div class="cat-block cat-cake" id="cat-cake">
-      <div class="cat-title">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14100d" stroke-width="2"><path d="M4 12h16v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-6z"/><path d="M4 12l2-5h12l2 5M9 3v2M12 2v3M15 3v2"/></svg></div>
-        <h3>کیک و کوکی</h3>
-        <span class="en-tag">Cakes &amp; Cookies</span>
-      </div>
-      <div class="item-grid">
-        <div class="item"><span class="name">کیک روز</span><span class="dots"></span><span class="price">۸۵٬۰۰۰</span></div>
-        <div class="item"><span class="name">کوکی</span><span class="dots"></span><span class="price">۶۵٬۰۰۰</span></div>
-      </div>
-    </div>
-
-    <!-- Brewed Coffee -->
-    <div class="cat-block cat-brew" id="cat-brew">
-      <div class="cat-title">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f2e8d5" stroke-width="2"><path d="M12 3l7 5-7 13-7-13 7-5z"/><path d="M12 3v18"/></svg></div>
-        <h3>دم‌آوری دستی</h3>
-        <span class="en-tag">Brewed Coffee</span>
-      </div>
-      <div class="item-grid">
-        <div class="item"><span class="name">V60</span><span class="dots"></span><span class="price">۵۰۰٬۰۰۰</span></div>
-        <div class="item"><span class="name">Chemex</span><span class="dots"></span><span class="price">۱۵۵٬۰۰۰</span></div>
-      </div>
-    </div>
-
-  </div>
+<div class="mt-20 text-center">
+<p class="text-white/40 font-body-md">تمامی متریال مصرفی به صورت روزانه و تازه تهیه می‌شوند.</p>
+</div>
+</div>
 </section>
 
-<!-- ===================== LOCATION ===================== -->
-<section class="location" id="location">
-  <div class="wrap loc-grid">
-    <div class="loc-card">
-      <h2>بیا سر بزن</h2>
-      <p>پیدا کردن مستر کافی راحته — فقط روی دکمه‌ی زیر بزن تا مسیر توی گوگل‌مپ برات باز بشه.</p>
-      <div class="loc-actions">
-        <a class="btn btn-primary" href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">باز کردن در گوگل‌مپ</a>
-        <a class="btn btn-outline" href="https://instagram.com/mr.coffee2017sari" target="_blank" rel="noopener">اینستاگرام ما</a>
-      </div>
-    </div>
-    <div class="loc-visual">
-      <iframe
-       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d400.60471921370174!2d53.0728998!3d36.5580248!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f853fa44b4d031b%3A0xa2627f3e9c5a32f1!2sMr%20coffee!5e0!3m2!1sen!2sfr!4v1782935227214!5m2!1sen!2sfr"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen
-        title="مستر کافی روی نقشه گوگل">
-      </iframe>
-    </div>
-  </div>
+<!-- Brand Story Section -->
+<section class="py-20 bg-background relative overflow-hidden" id="about">
+<div class="absolute right-0 top-0 jersey-number text-[20rem] leading-none opacity-5 translate-x-1/2 pointer-events-none select-none">11</div>
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="relative">
+<div class="aspect-square border-4 border-[#C9A24B] p-4 stadium-shadow">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('assets/about-bg.svg')"></div>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-primary text-white p-8 max-w-xs hidden md:block">
+<span class="font-display text-4xl block mb-2">11</span>
+<p class="font-label-caps text-label-caps">تمرکز روی تجربه هواداری</p>
+</div>
+</div>
+<div class="lg:pr-20">
+<span class="text-[#C9A24B] font-label-caps text-label-caps">OUR MISSION</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4 mb-8">داستان یازده؛ فراتر از یک کافه</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-6">
+کافه یازده با هدف ایجاد فضایی حرفه‌ای برای هواداران واقعی ورزش متولد شد. ما معتقدیم تماشای بازی‌های بزرگ نیاز به اتمسفری دارد که همانند ورزشگاه، شور و هیجان را منتقل کند.
+</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-[#C9A24B] flex items-center justify-center rounded flex-shrink-0">
+<svg class="icon text-[#12261C]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zm0 2c4.97 0 8 1.79 8 3s-3.03 3-8 3-8-1.79-8-3 3.03-3 8-3zm-8 6.14c1.79 1.15 4.69 1.86 8 1.86s6.21-.71 8-1.86V17c0 1.21-3.03 3-8 3s-8-1.79-8-3v-8.86z"/></svg>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg">اتمسفر استادیومی</h4>
+<p class="text-on-surface-variant font-body-md">طراحی آکوستیک و بصری برای انتقال حداکثر هیجان</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-[#C9A24B] flex items-center justify-center rounded flex-shrink-0">
+<svg class="icon text-[#12261C]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.1 13.34 10.93 10.51 3.91 3.5C2.35 5.06 2.35 7.59 3.91 9.16zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13z"/></svg>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg">کیفیت برتر</h4>
+<p class="text-on-surface-variant font-body-md">ترکیب غذای باکیفیت رستورانی با فضای دوستانه کافه</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-[#C9A24B] flex items-center justify-center rounded flex-shrink-0">
+<svg class="icon text-[#12261C]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05C16.16 13.88 17 15.02 17 16.5V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg">باکس‌های گروهی</h4>
+<p class="text-on-surface-variant font-body-md">باکس‌های اختصاصی تیم‌های محبوب فوتبال برای جمع‌های دوستانه</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  <div class="wrap">
-    <div class="foot-row">
-      <div class="foot-brand">
-        <img src="logo.png" alt="لوگوی مستر کافی">
-        <span>مستر کافی — Mr. Coffee, Since 2017</span>
-      </div>
-      <div class="foot-links">
-        <a href="#about">درباره ما</a>
-        <a href="#menu">منو</a>
-        <a href="https://instagram.com/mr.coffee2017sari" target="_blank" rel="noopener">اینستاگرام</a>
-        <a href="https://maps.app.goo.gl/VkJ4zuADDoGAMFJXA" target="_blank" rel="noopener">آدرس</a>
-      </div>
-    </div>
-    <div class="foot-copy">© تمامی حقوق برای مستر کافی محفوظ است.</div>
-  </div>
+<!-- Contact & Location Section -->
+<section class="py-20 bg-surface-container-low border-t border-outline-variant" id="contact">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-10">اطلاعات تماس و مکان</h2>
+<div class="space-y-8">
+<div>
+<span class="text-[#C9A24B] font-label-caps text-label-caps block mb-2">LOCATION</span>
+<p class="font-headline-md text-headline-md">ساری، خیابان مهدیه (بیست متری دوم)، نبش مهدیه چهاردهم (گلسار)</p>
+</div>
+<div>
+<span class="text-[#C9A24B] font-label-caps text-label-caps block mb-2">PHONE</span>
+<div class="flex flex-col gap-2">
+<a class="font-normal text-headline-md hover:text-[#C9A24B] transition-colors w-fit" dir="ltr" href="tel:09059116011">0905 911 6011 <span class="text-sm font-body-md text-on-surface-variant">(شماره کافه)</span></a>
+<a class="font-normal text-headline-md hover:text-[#C9A24B] transition-colors w-fit" dir="ltr" href="tel:09199790077">0919 979 0077 <span class="text-sm font-body-md text-on-surface-variant">(شماره رزرو)</span></a>
+</div>
+</div>
+<div>
+<span class="text-[#C9A24B] font-label-caps text-label-caps block mb-2">OPERATING HOURS</span>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div>
+<span class="block text-on-surface-variant font-body-md">شنبه تا چهارشنبه</span>
+<span class="font-bold">۱۰:۰۰ - ۲۳:۳۰</span>
+</div>
+<div>
+<span class="block text-on-surface-variant font-body-md">پنجشنبه و جمعه</span>
+<span class="font-bold">۰۹:۰۰ - ۰۱:۰۰</span>
+</div>
+</div>
+</div>
+<div class="pt-4 flex flex-col md:flex-row gap-4">
+<a class="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3 hover:bg-[#C9A24B] transition-colors stadium-shadow" href="https://nshn.ir/3c_bfkSf2FOVdN" target="_blank" rel="noopener">
+<svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+مشاهده روی نقشه / مسیریابی
+</a>
+<a class="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white transition-colors" href="tel:09199790077">
+<svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02l-2.2 2.19z"/></svg>
+تماس برای رزرو میز
+</a>
+</div>
+</div>
+</div>
+<div class="h-[400px] bg-white border border-outline-variant rounded-xl overflow-hidden stadium-shadow group cursor-pointer relative" onclick="window.open('https://nshn.ir/3c_bfkSf2FOVdN', '_blank')">
+<iframe class="w-full h-full pointer-events-none" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://neshan.org/maps/iframe/places/3ccba31eb298aaa0e9927a8f0dceb1f0#c36.558-53.074-18z-0p/36.55755400195055/53.07291448144613"></iframe>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors flex items-end justify-center pb-6">
+<span class="bg-primary text-white px-4 py-2 text-sm font-label-caps opacity-0 group-hover:opacity-100 transition-opacity">باز کردن در Google Maps</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant/70 font-body-md mt-2">نمایش نقشه نیاز به اتصال اینترنت دارد؛ آدرس بالا همیشه در دسترس است.</p>
+</div>
+</section>
+
+<footer class="bg-tertiary text-on-tertiary border-t-4 border-[#C9A24B]">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-stack-md">
+<div class="flex items-center gap-3">
+<img src="assets/logo.png" alt="لوگوی یازده" class="h-12 w-auto">
+<span class="font-display text-headline-md text-[#C9A24B]">یازده</span>
+</div>
+<p class="max-w-xs font-body-md text-on-tertiary/80 leading-relaxed">
+تجربه واقعی تماشای فوتبال در فضایی مدرن و پرانرژی در قلب ساری. سوت آغاز را از دست ندهید.
+</p>
+</div>
+<div class="flex flex-col gap-stack-md">
+<h4 class="font-headline-md text-headline-md text-white">رزرو میز</h4>
+<a class="font-body-lg text-body-lg text-on-tertiary/80 hover:text-[#C9A24B] transition-colors w-fit inline-flex items-baseline gap-2" dir="ltr" href="tel:09199790077">
+    0919 979 0077
+    <span class="text-xs font-body-md text-on-tertiary/60" dir="rtl">(شماره رزرو)</span>
+</a>
+<a class="font-body-lg text-body-lg text-on-tertiary/80 hover:text-[#C9A24B] transition-colors w-fit inline-flex items-baseline gap-2" dir="ltr" href="tel:09059116011">0905 911 6011 <span class="text-xs font-body-md text-on-tertiary/60" dir="rtl">(شماره کافه)</span></a>
+<p class="text-xs font-label-caps opacity-40">© 2026 کافه فست فود یازده. تمامی حقوق محفوظ است.</p>
+</div>
+<div class="grid grid-cols-1 gap-stack-sm">
+<span class="font-label-caps text-label-caps text-[#C9A24B] mb-2">LINKS</span>
+<a class="text-on-tertiary/80 hover:text-[#C9A24B] hover:underline underline-offset-4 transition-all" href="#hero">صفحه اصلی</a>
+<a class="text-on-tertiary/80 hover:text-[#C9A24B] hover:underline underline-offset-4 transition-all" href="https://football360.ir/league/matches" target="_blank" rel="noopener">برنامه بازی‌ها</a>
+<a class="text-on-tertiary/80 hover:text-[#C9A24B] hover:underline underline-offset-4 transition-all" href="#menu">منوی کافه</a>
+<a class="text-on-tertiary/80 hover:text-[#C9A24B] hover:underline underline-offset-4 transition-all" href="#offers">پیشنهاد ویژه</a>
+<a class="text-on-tertiary/80 hover:text-[#C9A24B] hover:underline underline-offset-4 transition-all" href="#about">درباره یازده</a>
+</div>
+</div>
 </footer>
 
-<script>
-  // active category chip on scroll
-  const links = document.querySelectorAll('.cat-nav a');
-  const blocks = document.querySelectorAll('.cat-block');
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        links.forEach(l=>l.classList.remove('active'));
-        const match = document.querySelector('.cat-nav a[href="#'+entry.target.id+'"]');
-        if(match) match.classList.add('active');
-      }
-    });
-  }, {rootMargin:'-40% 0px -50% 0px', threshold:0});
-  blocks.forEach(b=>obs.observe(b));
-</script>
+<!-- Floating reserve button (mobile) -->
+<a href="tel:09199790077" class="fixed bottom-6 left-6 z-50 md:hidden bg-[#C9A24B] text-[#12261C] w-14 h-14 rounded-full flex items-center justify-center stadium-shadow active:scale-95 transition-all">
+<svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02l-2.2 2.19z"/></svg>
+</a>
 
+<script>
+// ===================== MENU DATA =====================
+function t(n){ return n.toLocaleString('fa-IR') + ' تومان'; }
+
+const menuData = {
+    pizza: {
+        title: 'پیتزا',
+        note: 'اندازه‌ها: ۱۹ سانتی (۱ نفره) / ۲۴ سانتی (۱ نفره) / ۳۰ سانتی (۲ نفره)',
+        items: [
+            { name:'پیتزا برگر', desc:'برگر گوشت گوساله + پنیر موزارلا + پیاز گریل شده', prices:{'۱۹ سانتی':595000,'۲۴ سانتی':820000,'۳۰ سانتی':1050000} },
+            { name:'پیتزا چیزا', desc:'سیب زمینی + پنیر موزارلا + زامبون + شنیسل مرغ سوخاری', prices:{'۱۹ سانتی':550000,'۲۴ سانتی':750000,'۳۰ سانتی':975000} },
+            { name:'پیتزا میگو سوخاری', desc:'شاه میگو سوخاری + سس مارینارا + پنیر موزارلا', prices:{'۱۹ سانتی':595000,'۲۴ سانتی':820000,'۳۰ سانتی':1100000} },
+            { name:'بیف آلفردو', desc:'گوشت گوساله رست شده + سس آلفردو + قارچ + پنیر پیتزا + فلفل دلمه و زیتون', prices:{'۱۹ سانتی':645000,'۲۴ سانتی':850000,'۳۰ سانتی':1100000} },
+            { name:'چیکن آلفردو', desc:'مرغ گریل + سس آلفردو + قارچ + پنیر پیتزا + فلفل دلمه رنگی', prices:{'۱۹ سانتی':545000,'۲۴ سانتی':785000,'۳۰ سانتی':1020000} },
+            { name:'قارچ و گوشت', desc:'گوشت چرخ کرده + قارچ + پنیر پیتزا + سس مارینارا + فلفل دلمه رنگی', prices:{'۱۹ سانتی':615000,'۲۴ سانتی':785000,'۳۰ سانتی':1050000} },
+            { name:'سیر و استیک', desc:'گوشت راسته گوساله + سس قارچ + پنیر پیتزا + قارچ + زیتون سیاه + حریره سیر', prices:{'۱۹ سانتی':645000,'۲۴ سانتی':925000,'۳۰ سانتی':1100000} },
+            { name:'یازده (چهار طعم)', desc:'قارچ و گوشت + مرغ گریل شده + پپرونی + شکاری', prices:{'۱۹ سانتی':610000,'۲۴ سانتی':790000,'۳۰ سانتی':1050000} },
+            { name:'سوپرچیکن', desc:'فیله گریل + شنیسل سوخاری + پنیر موزارلا', prices:{'۱۹ سانتی':530000,'۲۴ سانتی':740000,'۳۰ سانتی':1000000} },
+            { name:'سیر و بیکن', desc:'پنیر موزارلا + بیکن ایرلندی + زیتون + قارچ + حریره سیر', prices:{'۱۹ سانتی':620000,'۲۴ سانتی':860000,'۳۰ سانتی':1050000} },
+            { name:'اسپشیال', desc:'مخلوط دنر گوشت و مرغ + قارچ + سس مارینارا', prices:{'۱۹ سانتی':620000,'۲۴ سانتی':870000,'۳۰ سانتی':1050000} },
+            { name:'پپرونی', desc:'پنیر پیتزا + پپرونی + هالاپینو + سس مارینارا', prices:{'۱۹ سانتی':515000,'۲۴ سانتی':730000,'۳۰ سانتی':945000} },
+            { name:'شکاری', desc:'سس مارینارا + کراکف + زامبون + گوشت و مرغ ۹۰٪ + قارچ + پنیر پیتزا', prices:{'۱۹ سانتی':520000,'۲۴ سانتی':730000,'۳۰ سانتی':945000} },
+            { name:'مارگاریتا', desc:'سس مارینارا + پنیر موزارلا + گوجه گیلاسی', prices:{'۱۹ سانتی':440000,'۲۴ سانتی':640000,'۳۰ سانتی':740000} }
+        ]
+    },
+    burgers: {
+        title:'برگر و ساندویچ',
+        groups:[
+            { heading:'برگر', items:[
+                { name:'استیک برگر', desc:'۱۲۰ گرم شنیسل گریل + پنیر گودا + کاهو + گوجه + خیارشور + سس برگر + نان مک', price:400000 },
+                { name:'زینگر برگر', desc:'۱۲۰ گرم شنیسل مرغ سوخاری + پنیر دیپ چدار + کاهو + گوجه + خیارشور + سس برگر + نان مک', price:450000 },
+                { name:'سوپریم برگر', desc:'۱۲۰ گرم شنیسل مرغ سوخاری + پنیر دیپ چدار + کاهو + گوجه + خیارشور + سس برگر + نان مک', price:490000 },
+                { name:'دبل دان', desc:'۲ عدد شنیسل سینه مرغ ۱۵۰ گرمی + زامبون گوشت ۹۰٪ + گوجه + سس پنیر چدار + خیارشور', price:620000 },
+                { name:'چیز برگر', desc:'برگر ۱۵۰ گرمی + کاهو + گوجه + خیارشور + سس برگر + پنیر گودا + نان مک', price:520000 },
+                { name:'ماشروم برگر', desc:'۱۵۰ گرم گوشت + قارچ + پنیر ورقه‌ای + کاهو + گوجه + خیارشور + سس فرانسوی + نان مک', price:555000 },
+                { name:'برگر شکاری', desc:'۱۵۰ گرم زامبون گوشت ۹۰٪ + گوجه + خیارشور + پنیر ورقه‌ای + نان مک', price:565000 },
+                { name:'سوپر برگر', desc:'۱۵۰ گرم فیله مرغ گریل + پنیر ورقه‌ای + کاهو + گوجه + خیارشور + پیاز کارامل + نان مک', price:655000 },
+                { name:'دبل برگر', desc:'۱۵۰ گرمی ۲ عدد + پنیر ورقه‌ای ۲ عدد + کاهو + گوجه + خیارشور + سس برگر + نان مک', price:760000 },
+                { name:'آرماندو برگر', desc:'برگر گوساله دست‌ساز ۱۵۰ گرمی + ۱۰۰ گرم گوشت رست شده گردن گوساله + ۱۰۰ گرم بیکن ایرلندی + سس دیپ + خیارشور + گوجه + کاهو', price:990000 }
+            ]},
+            { heading:'ساندویچ', items:[
+                { name:'ساندویچ چیکن آلفردو', desc:'نان باگت + ۲۵۰ گرم مخلوط فیله مرغ، قارچ و خامه + جعفری تازه + خیارشور', price:465000 },
+                { name:'ساندویچ هات‌داگ مجاری', desc:'نان باگت + هات‌داگ مجاری + میکس قارچ و پنیر پیتزا + کاهو + گوجه + خیارشور', price:450000 },
+                { name:'ساندویچ ژامبون تنوری', desc:'نان باگت + مخلوط ژامبون گوشت و مرغ ۹۰٪ + قارچ + پنیر پیتزا + کاهو + گوجه + خیارشور + سس دیپ', price:485000 },
+                { name:'ساندویچ کراکف پنیری', desc:'۲۵۰ گرم کراکف پنیری + ۲ ورق پنیر گودا + خیارشور + گوجه + سس دیپ + کاهو', price:520000 },
+                { name:'ساندویچ کوکتل پنیری', desc:'۲۵۰ گرم کوکتل پنیری + سس قارچ + جعفری تازه + گوجه + خیارشور + سس دیپ چدار', price:450000 }
+            ]}
+        ]
+    },
+    pasta: {
+        title:'پاستا و سالاد',
+        groups:[
+            { heading:'پاستا (لارج / مینی)', items:[
+                { name:'پاستا چیکن آلفردو', desc:'پنه + خامه + مرغ + شیر + ادویه + پنیر پارمسان + قارچ', prices:{'لارج':550000,'مینی':400000} },
+                { name:'پاستا چیکن آلفردو تنوری', desc:'پنه + قارچ + خامه + مرغ + ادویه + شیر + پنیر پیتزا', prices:{'لارج':630000} },
+                { name:'پاستا بیف آلفردو', desc:'پنه + خامه + راسته گوساله + شیر + ادویه + پنیر پارمسان + قارچ', prices:{'لارج':630000,'مینی':450000} },
+                { name:'پاستا بیف آلفردو تنوری', desc:'پنه + خامه + راسته گوساله + شیر + ادویه + پنیر پارمسان + قارچ', prices:{'لارج':710000} },
+                { name:'پاستا آرابیاتا', desc:'پنه + خامه + مرغ + سس مارینارا + ادویه + پنیر پارمسان + قارچ', prices:{'لارج':550000,'مینی':400000} },
+                { name:'پاستا بلونز', desc:'پنه + سس مارینارا + گوشت چرخ کرده + پنیر پارمسان + فلفل دلمه + خامه + پوره گوجه', prices:{'لارج':580000,'مینی':420000} },
+                { name:'پاستا دبل چیکن', desc:'پنه + ۱۵۰ گرم فیله مرغ مزه‌دار شده + ۱۲۰ گرم شنیسل مرغ سوخاری + سس قارچ و خامه', prices:{'لارج':750000} }
+            ]},
+            { heading:'سالاد (لارج / مینی)', items:[
+                { name:'سالاد سزار گریل', desc:'کاهو + زیتون اسلایسی + گوجه گیلاسی + شنیسل مرغ گریل + پنیر پارمسان + سس سزار + نان تست', prices:{'لارج':540000,'مینی':385000} },
+                { name:'سالاد سزار سوخاری', desc:'کاهو پیچ + زیتون اسلایسی + گوجه گیلاسی + شنیسل سوخاری + پنیر پارمسان + سس سزار + نان تست', prices:{'لارج':580000,'مینی':395000} },
+                { name:'سالاد پاستا', desc:'پنه + زامبون مرغ ۹۰٪ + سیب زمینی + خیارشور + ذرت + نخودفرنگی + سس مخصوص + جعفری', prices:{'لارج':350000,'مینی':250000} }
+            ]},
+            { heading:'فرش‌لاین (سلامت)', items:[
+                { name:'سالاد یونانی', desc:'کلم بروکلی + کاهو پیچ + خیار و گوجه اسلایسی + زیتون اسلایسی + ریحان + پنیر کوزه‌ای + گردو + سس رژیمی', price:420000 },
+                { name:'سالاد فیت', desc:'کاهو پیچ + مرغ گریل ۱۲۰ گرمی + هویج + بادام درختی + ذرت + خیار + سس رژیمی', price:480000 },
+                { name:'چیکن فیت', desc:'۲۰۰ گرم سینه مرغ گریل شده + سبزیجات بلانچ + سیب زمینی تنوری + سس رژیمی', price:550000 }
+            ]}
+        ]
+    },
+    doner: {
+        title:'خوراک و ساندویچ دنر',
+        items:[
+            { name:'خوراک دنر گوشت', desc:'۲۰۰ گرم دنر گوشت + پیاز و جعفری + سیب زمینی تنوری + سالاد کلم + خیارشور + گوجه', price:645000 },
+            { name:'خوراک دنر مرغ', desc:'۲۰۰ گرم دنر مرغ + پیاز و جعفری + سیب زمینی تنوری + سالاد کلم + خیارشور + گوجه', price:580000 },
+            { name:'خوراک میکس دنر', desc:'۲۰۰ گرم میکس دنر گوشت و مرغ + پیاز و جعفری + سیب زمینی تنوری + سالاد کلم + خیارشور + گوجه', price:620000 },
+            { name:'ساندویچ دنر گوشت', desc:'۲۰۰ گرم دنر گوشت + سس گوجه + خیارشور + جعفری', price:600000 },
+            { name:'ساندویچ دنر مرغ', desc:'۲۰۰ گرم دنر مرغ + سس گوجه + خیارشور + جعفری', price:565000 },
+            { name:'ساندویچ میکس دنر', desc:'۲۰۰ گرم مخلوط دنر گوشت و مرغ + سس گوجه + جعفری + خیارشور', price:585000 }
+        ]
+    },
+    fried: {
+        title:'مزه بازی، سوخاری و پیراشکی',
+        groups:[
+            { heading:'مزه بازی و سوخاری', items:[
+                { name:'فیله دو تکه', desc:'۲ عدد فیله سوخاری مزه‌دار شده + سیب زمینی سوخاری + قارچ سوخاری + سالاد کلم', price:485000 },
+                { name:'فیله سه تکه', desc:'۳ عدد فیله سوخاری + قارچ سوخاری + سیب زمینی + سالاد کلم', price:585000 },
+                { name:'جوجه چینی دو تکه', desc:'۲ عدد جوجه چینی مزه‌دار شده + سیب زمینی سوخاری + سالاد کلم', price:485000 },
+                { name:'میکس مزه سوخاری', desc:'۲ عدد پنیر سوخاری + ۵ عدد کراکف سوخاری + ۲ عدد فیله سوخاری مزه‌دار شده + سالاد کلم', price:550000 },
+                { name:'میکس مزه پیراشکی', desc:'پیراشکی قارچ و گوشت + پنیر چینی + جوجه چینی + سیب زمینی مزه‌دار شده + سالاد کلم', price:550000 },
+                { name:'میکس مزه فیله', desc:'فیله سوخاری + پیراشکی شکاری + قارچ چینی + سیب زمینی سرخ شده + سالاد کلم', price:695000 },
+                { name:'الون پلیت', desc:'۲ عدد فیله سوخاری + جوجه چینی + کراکف سوخاری + سیب زمینی مزه‌دار سرخ شده + سالاد کلم', price:695000 }
+            ]},
+            { heading:'بشقاب پیراشکی (به همراه سیب زمینی و سالاد کلم؛ تنوری یا روغنی به انتخاب شما)', items:[
+                { name:'سوپر پیراشکی یازده', desc:'برگر دست‌ساز گوشت + قارچ و خامه + سیب زمینی + سالاد کلم', price:580000 },
+                { name:'پیراشکی رست بیف', desc:'رست بیف گوساله + قارچ و خامه + سیب زمینی + سالاد کلم', price:395000 },
+                { name:'پیراشکی قارچ و گوشت', desc:'مخلوط گوشت چرخ کرده و گوساله + قارچ و خامه + سیب زمینی + سالاد کلم', price:380000 },
+                { name:'پیراشکی چیکن آلفردو', desc:'آلفردو مرغ + سس پیتزا + قارچ + سیب زمینی + سالاد کلم', price:380000 },
+                { name:'پیراشکی اسپشیال', desc:'مخلوط دنر گوشت و مرغ + سیب زمینی + سالاد کلم', price:380000 },
+                { name:'پیراشکی چیکن', desc:'دنر مرغ + فلفل دلمه + قارچ و خامه + سیب زمینی + سالاد کلم', price:370000 },
+                { name:'پیراشکی جلاپینو', desc:'پپرونی + فلفل هالاپینو + قارچ و خامه + سیب زمینی + سالاد کلم', price:360000 },
+                { name:'پیراشکی شکاری', desc:'زامبون گوشت و مرغ + فلفل دلمه + قارچ و خامه + سیب زمینی + سالاد کلم', price:360000 },
+                { name:'پیراشکی بادمجان و گردو', desc:'بادمجان + گردو + سس قارچ و پنیر پیتزا + سیب زمینی + سالاد کلم', price:360000 },
+                { name:'پیراشکی سبزیجات', desc:'مخلوط سبزیجات + قارچ و خامه + پنیر + سیب زمینی + سالاد کلم', price:330000 }
+            ]}
+        ]
+    },
+    fries: {
+        title:'سیب باکس، پیش‌غذا و سس',
+        groups:[
+            { heading:'سیب باکس (یک نفره / دو نفره)', note:'حجم سیب زمینی: ۳۰۰ گرم یک نفره، ۵۰۰ گرم دو نفره', items:[
+                { name:'میگو فرایز', desc:'شاه میگو سوخاری (۳ عدد یک نفره / ۶ عدد دو نفره) + سس مخصوص + سیب زمینی سرخ شده', prices:{'یک نفره':495000,'دو نفره':750000} },
+                { name:'بیف فرایز', desc:'رست بیف گوساله با خامه و قارچ (۵۰ گرم یک نفره / ۱۰۰ گرم دو نفره) + سس دیپ چدار + سیب زمینی', prices:{'یک نفره':495000,'دو نفره':750000} },
+                { name:'بیکن و چدار', desc:'بیکن ایرلندی (۵۰ گرم یک نفره / ۱۰۰ گرم دو نفره) + سس دیپ چدار + سیب زمینی', prices:{'یک نفره':485000,'دو نفره':720000} },
+                { name:'برگر فرایز', desc:'برگر دست‌ساز گوساله (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس دیپ چدار + سیب زمینی', prices:{'یک نفره':485000,'دو نفره':720000} },
+                { name:'دنر فرایز', desc:'مخلوط دنر مرغ و گوشت (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس مخصوص + سیب زمینی', prices:{'یک نفره':465000,'دو نفره':720000} },
+                { name:'کراکف فرایز', desc:'کراکف پنیری سوخاری (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس مخصوص + سیب زمینی', prices:{'یک نفره':420000,'دو نفره':720000} },
+                { name:'چیکن فرایز', desc:'شنیسل سوخاری (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس مخصوص + سیب زمینی', prices:{'یک نفره':420000,'دو نفره':650000} },
+                { name:'کوکتل فرایز', desc:'کوکتل پنیری (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس مخصوص + سیب زمینی', prices:{'یک نفره':420000,'دو نفره':650000} },
+                { name:'قارچ و خامه', desc:'سس قارچ سوخاری (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس مخصوص + سیب زمینی', prices:{'یک نفره':400000,'دو نفره':600000} },
+                { name:'چیزفرایز', desc:'مخلوط پنیر گودا و موزارلا (۱۰۰ گرم یک نفره / ۲۰۰ گرم دو نفره) + سس مخصوص + سیب زمینی', prices:{'یک نفره':400000,'دو نفره':600000} }
+            ]},
+            { heading:'پیش‌غذا', items:[
+                { name:'نان سیر (۱۹ سانتی)', desc:'خمیر مخصوص + سیر تازه + روغن زیتون + پنیر پیتزا', price:400000 },
+                { name:'سیب زمینی سرخ شده', desc:'سیب زمینی خلالی تازه سرخ شده', price:300000 },
+                { name:'سیب زمینی تنوری', desc:'سیب زمینی تنوری با ادویه مخصوص', price:350000 },
+                { name:'قارچ سوخاری', desc:'قارچ سوخاری ترد و خوش‌طعم', price:350000 }
+            ]},
+            { heading:'سس دست‌ساز', items:[
+                { name:'سس چیلی تای', desc:'سس تند و شیرین چیلی تای', price:35000 },
+                { name:'سس تارتار', desc:'سس تارتار خانگی', price:35000 },
+                { name:'سس قارچ و خامه (۱۰۰ گرم)', desc:'سس قارچ و خامه برای افزودن به سفارش', price:150000 },
+                { name:'سس چدار (۱۰۰ گرم)', desc:'سس پنیر چدار برای افزودن به سفارش', price:150000 },
+                { name:'سس سیر', desc:'سس سیر مخصوص یازده', price:40000 },
+                { name:'سس فرانسوی', desc:'سس فرانسوی کلاسیک', price:35000 },
+                { name:'سس هانی اسموکی', desc:'سس عسل دودی', price:40000 },
+                { name:'سس سزار', desc:'سس سزار خانگی', price:45000 }
+            ]}
+        ]
+    },
+    shakes: {
+        title:'شیک و اسموتی',
+        groups:[
+            { heading:'شیک‌ها', items:[
+                { name:'شیک شکلات', desc:'شکلات خالص و بستنی وانیلی', price:280000 },
+                { name:'شیک بهارنارنج', desc:'طعم خنک بهارنارنج با بستنی', price:280000 },
+                { name:'شیک نوتلا کلاسیک', desc:'ترکیب غلیظ نوتلا و بستنی وانیلی', price:350000 },
+                { name:'شیک اورئو کرمی', desc:'بیسکوییت اورئو و بستنی خامه‌ای', price:350000 },
+                { name:'شیک اسپرسو کارامل', desc:'اسپرسو + سس کارامل + بستنی وانیلی', price:360000 },
+                { name:'شیک موزشکلات', desc:'موز تازه و شکلات با بستنی', price:360000 },
+                { name:'شیک توت‌فرنگی خامه‌ای', desc:'توت‌فرنگی تازه و خامه', price:360000 },
+                { name:'شیک بادام‌زمینی', desc:'کره بادام‌زمینی و بستنی وانیلی', price:360000 },
+                { name:'شیک لوتوس کارامل', desc:'کرم لوتوس + بیسکوییت لوتوس + بستنی', price:360000 },
+                { name:'شیک نسکافه فندوق', desc:'نسکافه و فندوق با بستنی', price:350000 },
+                { name:'شیک تمشک و شاه‌توت', desc:'تمشک و شاه‌توت تازه با بستنی', price:350000 },
+                { name:'معجون (Eleven)', desc:'بستنی + کره بادام + موز + خرما + گردو', price:490000 },
+                { name:'بستنی اسکوپی', desc:'وانیلی، شکلاتی یا دارک', price:60000 },
+                { name:'شیرموز', desc:'شیر و موز تازه', price:285000 },
+                { name:'شیرموز بستنی', desc:'شیر، موز تازه و بستنی وانیلی', price:355000 }
+            ]},
+            { heading:'اسموتی', items:[
+                { name:'اسموتی توت‌فرنگی', desc:'توت‌فرنگی تازه', price:230000 },
+                { name:'اسموتی هندوانه', desc:'هندوانه تازه فصل', price:185000 },
+                { name:'اسموتی طالبی', desc:'طالبی تازه فصل', price:185000 },
+                { name:'اسموتی استوایی', desc:'میوه‌های استوایی', price:250000 },
+                { name:'اسموتی تمشک و شاتوت', desc:'تمشک و شاه‌توت تازه', price:250000 }
+            ]}
+        ]
+    },
+    coldDrinks: {
+        title:'قهوه و نوشیدنی سرد',
+        groups:[
+            { heading:'بار سرد بر پایه قهوه', items:[
+                { name:'کن هیلو (اسپرسو + یخ)', desc:'اسپرسو دبل روی یخ', price:125000 },
+                { name:'آیس آمریکانو', desc:'اسپرسو، آب و یخ', price:130000 },
+                { name:'آیس آمریکانو با طعم دلخواه', desc:'آیس آمریکانو با سیروپ دلخواه', price:165000 },
+                { name:'آیس لاته', desc:'اسپرسو و شیر سرد روی یخ', price:200000 },
+                { name:'آیس لاته با طعم دلخواه', desc:'آیس لاته با سیروپ دلخواه', price:220000 },
+                { name:'آیس موکا', desc:'اسپرسو، شکلات و شیر سرد', price:220000 },
+                { name:'آیس کارامل ماکیاتو', desc:'اسپرسو، شیر و سس کارامل روی یخ', price:220000 },
+                { name:'آیس لاته ماچا', desc:'ماچا و شیر سرد', price:260000 },
+                { name:'آیس لاته ماچا بری', desc:'ماچا، شیر سرد و بری', price:290000 },
+                { name:'آیس ماچا منگو', desc:'ماچا و منگو', price:290000 }
+            ]},
+            { heading:'نوشیدنی سرد', items:[
+                { name:'لیموناد', desc:'آب لیمو تازه + نعنا + شکر قهوه‌ای + سودا', price:185000 },
+                { name:'موهیتو (نرمال / بلو / رد)', desc:'نعنا تازه + لیمو + سودا + شربت مخصوص', price:195000 },
+                { name:'یونیکورن', desc:'آب سیب، آب آناناس، لیموترش، کاکتوس و پاستیل', price:280000 },
+                { name:'جوگر', desc:'زغال‌اخته، آلبالو، کرن‌بری و یخ', price:280000 },
+                { name:'یازده', desc:'آلوئه‌ورا، موهیتو، لیموترش و یخ', price:280000 }
+            ]},
+            { heading:'انرژی درینک VIP (+۱۸)', items:[
+                { name:'کارت قرمز', desc:'اسپرسو دبل + انرژی‌زا + کرن‌بری', price:250000 },
+                { name:'آرژانتینی', desc:'اسپرسو دبل + انرژی‌زا + بلوکاراسائو + لیمو', price:250000 },
+                { name:'ایتالیایی', desc:'اسپرسو دبل + انرژی‌زا + موهیتو + آلوئه‌ورا', price:250000 }
+            ]}
+        ]
+    },
+    hotDrinks: {
+        title:'چای، قهوه گرم و دسر',
+        groups:[
+            { heading:'بار گرم بر پایه قهوه', items:[
+                { name:'اسپرسو دبل', desc:'اسپرسو دوبل خالص', price:110000 },
+                { name:'آمریکانو', desc:'اسپرسو و آب گرم', price:120000 },
+                { name:'کورتادو', desc:'اسپرسو و مقدار کمی شیر بخارداده', price:140000 },
+                { name:'کاپوچینو کلاسیک', desc:'اسپرسو، شیر و فوم شیر', price:170000 },
+                { name:'کاپوچینو پودری', desc:'کاپوچینو با روکش پودر کاکائو', price:170000 },
+                { name:'کارامل ماکیاتو', desc:'اسپرسو، شیر و سس کارامل', price:210000 },
+                { name:'لاته', desc:'اسپرسو و شیر بخارداده', price:190000 },
+                { name:'لاته لوتوس', desc:'لاته با طعم بیسکویت لوتوس', price:230000 },
+                { name:'هات چاکلت اسپرسو', desc:'شکلات داغ همراه با اسپرسو', price:240000 },
+                { name:'لاته نوتلا', desc:'لاته با طعم نوتلا', price:230000 },
+                { name:'موکا', desc:'اسپرسو، شکلات و شیر بخارداده', price:210000 },
+                { name:'آفاگاتو', desc:'اسپرسو روی بستنی وانیلی', price:210000 }
+            ]},
+            { heading:'نوشیدنی گرم', items:[
+                { name:'ماچا لاته', desc:'ماچا و شیر گرم', price:250000 },
+                { name:'هات چاکلت', desc:'شکلات داغ خامه‌ای', price:220000 },
+                { name:'ماسالا', desc:'چای ماسالا با ادویه‌جات مخصوص', price:190000 },
+                { name:'هات لوتوس', desc:'نوشیدنی گرم با طعم لوتوس', price:220000 },
+                { name:'شیر عسل دارچین', desc:'شیر گرم، عسل و دارچین', price:180000 },
+                { name:'شیر گرم', desc:'شیر گرم ساده', price:120000 }
+            ]},
+            { heading:'چای و دمنوش', items:[
+                { name:'چای قندپهلو', desc:'چای سنتی با قند پهلو', price:65000 },
+                { name:'چای و نبات', desc:'چای همراه نبات', price:80000 },
+                { name:'چای و خرما', desc:'چای همراه خرما', price:85000 },
+                { name:'چای سبز', desc:'چای سبز خالص', price:85000 },
+                { name:'چای ترش', desc:'چای ترش خوش‌عطر', price:100000 },
+                { name:'چای زعفرانی', desc:'چای معطر با زعفران', price:120000 },
+                { name:'دمنوش سلامت', desc:'لیموترش + عسل + گل‌گاوزبان', price:130000 },
+                { name:'دمنوش بهارنارنج', desc:'دمنوش خوش‌عطر بهارنارنج', price:130000 },
+                { name:'دمنوش آرامش', desc:'ترکیب گیاهان آرام‌بخش', price:130000 }
+            ]},
+            { heading:'کیک و کوکی', items:[
+                { name:'مینی کوکی', desc:'کوکی کوچک تازه', price:40000 },
+                { name:'کوکی', desc:'شکلاتی، نیویورکی یا رژیمی', price:90000 },
+                { name:'چیزکیک شکلاتی', desc:'چیزکیک با روکش شکلات', price:230000 },
+                { name:'چیزکیک لوتوس', desc:'چیزکیک با طعم بیسکویت لوتوس', price:230000 }
+            ]}
+        ]
+    },
+    boxes: {
+        title:'باکس‌های گروهی',
+        note:'مخصوص تماشای دسته‌جمعی بازی؛ برای ۲ تا ۷ نفر — برای سفارش با شماره رزرو تماس بگیرید.',
+        groups:[
+            { heading:'باکس دو الی سه نفره', items:[
+                { name:'رئال مادرید', desc:'پیتزا قارچ و گوشت + ۲ عدد پیراشکی شکاری + سیب و قارچ + نوشابه قوطی', price:1290000 },
+                { name:'بارسلونا', desc:'پیتزا چیکن آلفردو + پیراشکی بیف + ۲ عدد فیله سوخاری + سیب و قارچ + نوشابه قوطی', price:1290000 },
+                { name:'پاری سن ژرمن', desc:'پیتزا بیف آلفردو چیکن + ۲ عدد فیله سوخاری + سیب و قارچ + نوشابه قوطی', price:1290000 },
+                { name:'یوونتوس', desc:'ماشروم برگر + ۲ عدد جوجه چینی + سالاد پاستا + سیب و قارچ + نوشابه قوطی', price:1180000 },
+                { name:'اینترمیلان', desc:'سالاد سزار سوخاری + پیراشکی اسپشیال + ۲ عدد فیله سوخاری + سیب و قارچ سوخاری + نوشابه قوطی', price:1180000 },
+                { name:'آث میلان', desc:'چیز برگر + ۲ عدد جوجه چینی + سیب و قارچ سوخاری + سالاد کلم + نوشابه قوطی', price:1180000 },
+                { name:'بایرن مونیخ', desc:'پیتزا سیر و بیکن + پیراشکی شکاری + ۲ عدد فیله سوخاری + سیب و قارچ سوخاری + نوشابه قوطی', price:1290000 },
+                { name:'لیورپول', desc:'پیتزا شکاری + پیراشکی بیف + ۲ عدد جوجه چینی + سیب و قارچ سوخاری + نوشابه قوطی', price:1220000 },
+                { name:'منچستریونایتد', desc:'پیتزا اسپشیال + پیراشکی چیکن + ۲ عدد فیله سوخاری + سیب و قارچ سوخاری + نوشابه قوطی', price:1220000 },
+                { name:'آرسنال', desc:'پیتزا پپرونی + پیراشکی شکاری + ۲ عدد جوجه چینی + سیب و قارچ سوخاری + نوشابه قوطی', price:1220000 },
+                { name:'چلسی', desc:'پیتزا سوپرچیکن + پیراشکی چیکن آلفردو + ۲ عدد جوجه چینی + سیب و قارچ + نوشابه قوطی', price:1180000 },
+                { name:'منچستر سیتی', desc:'پیراشکی شکاری + ۲ عدد فیله + جوجه چینی + سیب و قارچ سوخاری + نوشابه قوطی', price:1100000 },
+                { name:'استقلال', desc:'پاستا چیکن آلفردو + چیز برگر + ۲ عدد فیله + سیب و قارچ + نوشابه قوطی', price:1290000 },
+                { name:'پرسپولیس', desc:'پاستا بیف آلفردو + ساندویچ دنر گوشت + ۲ عدد جوجه چینی + سیب و قارچ', price:1290000 }
+            ]},
+            { heading:'باکس چهار نفره', items:[
+                { name:'لالیگا', desc:'پیتزا قارچ و گوشت + پاستا چیکن آلفردو (۲۴ سانتی) + ۲ عدد فیله + ساندویچ هات‌داگ + جوجه چینی + سیب و قارچ + ۲ نوشابه قوطی', price:1980000 },
+                { name:'پریمیرلیگ', desc:'پیتزا سیر و بیکن (۲۴ سانتی) + پاستا چیکن آلفردو + ۲ عدد فیله + چیزبرگر + جوجه چینی + سیب و قارچ + ۲ نوشابه قوطی', price:1980000 },
+                { name:'سری آ', desc:'پیتزا پپرونی (۲۴ سانتی) + ساندویچ هات‌داگ با سس داک + ۲ عدد فیله + جوجه چینی + سیب و قارچ + ۲ نوشابه قوطی', price:1980000 },
+                { name:'بوندسلیگا', desc:'پیتزا شکاری (۲۴ سانتی) + پاستا چیکن آلفردو + ۲ عدد فیله + ساندویچ ژامبون تنوری + جوجه چینی + سیب و قارچ + ۲ نوشابه قوطی', price:1980000 }
+            ]},
+            { heading:'باکس شش الی هفت نفره', items:[
+                { name:'جام جهانی', desc:'پیتزا اسپشیال (۳۰ سانتی) + قارچ و خامه + چیزبرگر + پیراشکی قارچ و گوشت + ۳ عدد فیله سوخاری + ۲ عدد جوجه سوخاری + نوشابه خانواده', price:2980000 },
+                { name:'چمپیونزلیگ', desc:'پیتزا سیر و بیکن (۳۰ سانتی) + کوکتل فرایز + ماشروم برگر + پیراشکی اسپشیال + جوجه چینی + ۳ عدد فیله سوخاری + قارچ سوخاری + نوشابه خانواده', price:2980000 },
+                { name:'جام ملت‌های اروپا', desc:'پیتزا چیکن آلفردو (۳۰ سانتی) + کراکف فرایز مخصوص + جوجه چینی کراکف + سالاد سزار مخصوص + ۳ عدد فیله سوخاری + سالاد کلم + نوشابه خانواده', price:2850000 },
+                { name:'کوپا آمریکا', desc:'پیتزا شکاری (۳۰ سانتی) + سیب آلفردو + ساندویچ کوکتل پنیری + سالاد سزار سوخاری + ۳ عدد فیله سوخاری + جوجه چینی + قارچ سوخاری + نوشابه خانواده', price:2850000 }
+            ]}
+        ]
+    }
+};
+
+function renderPriceBlock(item){
+    if (item.prices){
+        const entries = Object.entries(item.prices);
+        return `<div class="flex flex-wrap justify-end items-baseline gap-x-4 gap-y-1 mt-3 pt-3 border-t border-white/5">` +
+            entries.map(([label, val]) => `
+                <div class="flex items-baseline gap-1.5">
+                    <span class="text-white/40 text-xs font-label-sm">${label}</span>
+                    <span class="font-display text-sm text-[#C9A24B]">${t(val)}</span>
+                </div>`).join('') + `</div>`;
+    }
+    return '';
+}
+
+function renderItemCard(item){
+    const singlePrice = item.price ? `<span class="text-[#C9A24B] font-display text-lg whitespace-nowrap">${t(item.price)}</span>` : '';
+    // To add a real photo later: just set `img: 'assets/menu/your-file.jpg'` on the item's
+    // data entry in menuData above — no other change needed, the placeholder is replaced automatically.
+    const photo = item.img
+        ? `<img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover">`
+        : `<svg class="icon text-3xl text-white/20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>`;
+    return `
+    <div class="menu-item h-full flex flex-col border border-white/10 hover:border-[#C9A24B]/40 rounded-lg overflow-hidden transition-colors">
+        <div class="menu-item-photo w-full aspect-[4/3] bg-white/5 border-b border-dashed border-white/15 flex items-center justify-center overflow-hidden">
+            ${photo}
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+            <div class="flex justify-between items-start gap-4 mb-1">
+                <h3 class="font-headline-md text-body-lg text-white">${item.name}</h3>
+                ${singlePrice}
+            </div>
+            <p class="text-on-tertiary-container text-body-md font-body-md leading-relaxed">${item.desc}</p>
+            ${renderPriceBlock(item)}
+        </div>
+    </div>`;
+}
+
+function renderMenuItems(category){
+    const container = document.getElementById('menu-container');
+    const data = menuData[category];
+    if (!data) { container.innerHTML = ''; return; }
+
+    let html = '';
+    if (data.note){
+        html += `<div class="col-span-full -mt-4 mb-2"><p class="text-[#C9A24B]/70 text-xs font-label-sm">${data.note}</p></div>`;
+    }
+    if (data.groups){
+        data.groups.forEach(group => {
+            html += `<div class="col-span-full mt-6 first:mt-0"><h3 class="font-headline-md text-[#C9A24B] text-lg border-b border-white/10 pb-2 mb-2">${group.heading}</h3>`;
+            if (group.note){
+                html += `<p class="text-[#C9A24B]/70 text-xs font-label-sm mb-4">${group.note}</p>`;
+            }
+            html += `</div>`;
+            group.items.forEach(item => { html += `<div class="menu-item-wrap">${renderItemCard(item)}</div>`; });
+        });
+    } else if (data.items){
+        data.items.forEach(item => { html += `<div class="menu-item-wrap">${renderItemCard(item)}</div>`; });
+    }
+    container.innerHTML = html;
+}
+
+function filterMenu(category, btn){
+    const tabs = document.querySelectorAll('.menu-tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active-tab', 'border-b-2', 'border-[#C9A24B]');
+        tab.classList.add('text-white/60');
+    });
+    btn.classList.add('active-tab', 'border-b-2', 'border-[#C9A24B]');
+    btn.classList.remove('text-white/60');
+
+    const container = document.getElementById('menu-container');
+    container.style.opacity = '0';
+    container.style.transform = 'translateY(8px)';
+    setTimeout(() => {
+        renderMenuItems(category);
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+    }, 220);
+}
+
+// init
+renderMenuItems('pizza');
+
+// Simple scroll spy for nav background
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50){
+        header.classList.add('py-stack-sm', 'shadow-xl');
+        header.classList.remove('py-stack-md');
+    } else {
+        header.classList.add('py-stack-md');
+        header.classList.remove('py-stack-sm', 'shadow-xl');
+    }
+});
+</script>
 </body>
 </html>
